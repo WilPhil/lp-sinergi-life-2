@@ -19,17 +19,17 @@
 </head>
 
 <body>
-  <div class="w-full h-auto flex flex-col">
+  <div class="absolute inset-0 z-[-1] w-full h-screen xl:h-auto overflow-hidden">
+    <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted>
+      <source src="images/repeat-medium.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="w-full h-auto flex flex-col overflow-x-hidden">
     <!-- Nav Bar & Title -->
-    <div
-      class="max-md:bg-[#2E1065] relative w-full h-auto flex justify-center text-white overflow-hidden brightness-110 lg:pb-10">
-      <div class="max-md:hidden absolute z-10 w-full max-lg:min-h-screen min-h-full">
-        <video class="w-full h-full" autoplay loop muted>
-          <source src="images/repeat-medium.mp4" type="video/mp4" />
-          Your browser does not support the video tag
-        </video>
-      </div>
-      <div class="relative flex flex-col items-start max-w-[1200px] h-full pb-10">
+    <div class="w-full min-h-screen h-auto flex justify-center text-white brightness-110 lg:pb-10 z-30">
+      <div class="relative flex flex-col items-start max-w-[1200px] max-md:h-screen pb-10">
         <div class="relative z-30 flex w-full h-auto pt-2 max-xl:px-5 justify-between">
           <div class="flex flex-row justify-center items-center gap-2">
             <img src="images/Logo.png" alt="Logo" />
