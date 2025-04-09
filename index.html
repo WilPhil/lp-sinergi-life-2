@@ -40,13 +40,14 @@
     <div class="w-full h-auto flex flex-col overflow-x-hidden">
       <!-- Nav Bar & Title -->
       <div
-        class="w-full min-h-screen h-auto flex justify-center text-white brightness-110 max-xl:px-3 lg:pb-10 z-30"
+        class="w-full min-h-screen h-auto flex justify-center text-white brightness-110 lg:pb-10 z-30"
       >
         <div
+          x-data="{ open: false }"
           class="relative flex flex-col items-start max-w-[1200px] max-md:h-screen pb-10"
         >
           <div
-            class="relative z-30 flex w-full h-auto pt-2 max-xl:px-5 justify-between"
+            class="relative z-30 flex w-full h-auto pt-2 max-xl:px-3 justify-between"
           >
             <div class="flex flex-row justify-center items-center gap-5">
               <img src="images/Logo.png" alt="Logo" />
@@ -87,16 +88,25 @@
                 >Contact</a
               >
             </div>
-            <div class="max-lg:hidden flex justify-center items-center gap-3">
+            <div
+              x-on:click="open =! open"
+              class="max-lg:hidden flex justify-center items-center gap-3 hover:cursor-pointer"
+            >
               <img src="images/Indonesia.png" alt="Indonesia Flag" class="" />
               <p class="pt-1 text-[16px] font-400 opacity-70">ID</p>
-              <img src="images/polygon.png" alt="polygon" class="pt-0.5" />
+              <img
+                src="images/polygon.png"
+                alt="polygon"
+                class="pt-0.5"
+                :class="open ? 'rotate-180 pb-0.5' : ''"
+              />
             </div>
           </div>
           <div
             class="relative z-30 w-auto h-auto grow flex flex-col items-center place-content-center lg:mb-44 max-lg:pt-10 lg:pt-56 px-5 gap-8"
           >
             <div
+              x-show="open"
               class="max-lg:hidden absolute right-5 xl:right-0 top-1 w-[186px] h-[86px] flex flex-col justify-center px-3 gap-2 rounded-lg bg-[#FFFFFF] text-[#212529] text-[14px] font-[400]"
             >
               <img
@@ -127,7 +137,7 @@
             </p>
             <button
               type="button"
-              class="w-fit px-5 py-3 bg-[#6D28D9] rounded-[6px]"
+              class="w-fit px-5 py-3 bg-[#6D28D9] rounded-[6px] hover:brightness-90"
             >
               Join Us
             </button>
@@ -187,28 +197,32 @@
 
       <!-- Trusted by Companies -->
       <div
-        class="max-w-[1200px] h-auto mx-auto max-xl:px-3 py-10 lg:pb-16 flex flex-col justify-center items-center"
+        class="max-w-[1200px] h-auto mx-auto max-xl:px-3 py-10 lg:pb-16 justify-center items-center"
       >
-        <p
-          class="text-[24px] lg:text-[40px] font-[700] max-md:pb-8 pb-16 text-center"
-        >
-          Trusted by 100+ Leading Companies & Institutions
-        </p>
-        <div
-          class="grid max-md:grid-cols-3 grid-cols-6 max-md:gap-8 gap-12 justify-center items-center"
-        >
-          <img src="images/sociabuzz.png" alt="SociaBuzz" />
-          <img src="images/sanbersy.png" alt="Sanbersy" />
-          <img src="images/digital.png" alt="DigitalSkola" />
-          <img src="images/levelon.png" alt="Levelon" />
-          <img src="images/ralali.png" alt="Ralali" />
-          <img src="images/suit.png" alt="Suitmedia" />
-          <img src="images/suit.png" alt="Suitmedia" />
-          <img src="images/ralali.png" alt="Ralali" />
-          <img src="images/levelon.png" alt="Levelon" />
-          <img src="images/digital.png" alt="DigitalSkola" />
-          <img src="images/sanbersy.png" alt="Sanbersy" />
-          <img src="images/sociabuzz.png" alt="SociaBuzz" />
+        <div class="max-lg:w-screen">
+          <p
+            class="text-[24px] lg:text-[40px] font-[700] max-md:pb-8 pb-16 text-center"
+          >
+            Trusted by 100+ Leading Companies & Institutions
+          </p>
+          <div class="w-full overflow-x-auto">
+            <div
+              class="min-w-[1200px] grid grid-cols-6 gap-12 justify-center items-center max-lg:overflow-x-scroll max-xl:px-3"
+            >
+              <img src="images/sociabuzz.png" alt="SociaBuzz" />
+              <img src="images/sanbersy.png" alt="Sanbersy" />
+              <img src="images/digital.png" alt="DigitalSkola" />
+              <img src="images/levelon.png" alt="Levelon" />
+              <img src="images/ralali.png" alt="Ralali" />
+              <img src="images/suit.png" alt="Suitmedia" />
+              <img src="images/suit.png" alt="Suitmedia" />
+              <img src="images/ralali.png" alt="Ralali" />
+              <img src="images/levelon.png" alt="Levelon" />
+              <img src="images/digital.png" alt="DigitalSkola" />
+              <img src="images/sanbersy.png" alt="Sanbersy" />
+              <img src="images/sociabuzz.png" alt="SociaBuzz" />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -245,7 +259,7 @@
             </div>
           </div>
           <img
-            src="images/aboutus.png"
+            src="images/about.png"
             alt="about us"
             class="m-auto md:w-[488px] md:h-[534px]"
           />
@@ -320,23 +334,23 @@
             applied in daily practice, so it can be understood and mastered more
             quickly.
           </p>
-          <div class="flex flex-col gap-3 pb-10 text-[16px] xl:text-[20px]">
+          <div class="flex flex-col gap-3 text-[16px] xl:text-[20px]">
             <div class="flex flex-row justify-start gap-4">
-              <img src="images/check.png" alt="Check" class="self-center" />
+              <img src="images/check.png" alt="Check" class="self-start" />
               <p>
                 Practical Methods - Focus on direct use in everyday
                 conversation.
               </p>
             </div>
             <div class="flex flex-row justify-start gap-4">
-              <img src="images/check.png" alt="Check" class="self-center" />
+              <img src="images/check.png" alt="Check" class="self-start" />
               <p>
                 Interactive Environment - Learn with tutors and active
                 participants.
               </p>
             </div>
             <div class="flex flex-row justify-start gap-4">
-              <img src="images/check.png" alt="Check" class="self-center" />
+              <img src="images/check.png" alt="Check" class="self-start" />
               <p>
                 Relevant Material - adapted to the needs of the world of work
                 and social life.
@@ -376,21 +390,21 @@
           </p>
           <div class="flex flex-col gap-3 text-[16px] xl:text-[20px]">
             <div class="flex flex-row justify-start gap-4">
-              <img src="images/check.png" alt="Check" class="self-center" />
+              <img src="images/check.png" alt="Check" class="self-start" />
               <p>
                 Practical Methods - Focus on direct use in everyday
                 conversation.
               </p>
             </div>
             <div class="flex flex-row justify-start gap-4">
-              <img src="images/check.png" alt="Check" class="self-center" />
+              <img src="images/check.png" alt="Check" class="self-start" />
               <p>
                 Interactive Environment - Learn with tutors and active
                 participants.
               </p>
             </div>
             <div class="flex flex-row justify-start gap-4">
-              <img src="images/check.png" alt="Check" class="self-center" />
+              <img src="images/check.png" alt="Check" class="self-start" />
               <p>
                 Relevant Material - adapted to the needs of the world of work
                 and social life.
@@ -409,23 +423,27 @@
 
       <!-- Timeline Englishvit -->
       <div
-        class="max-w-[1200px] h-auto flex flex-col m-auto justify-center items-center max-xl:px-3 py-10"
+        class="max-w-[1200px] h-auto flex flex-col xl:m-auto justify-center items-center py-10"
       >
         <div
           class="w-auto h-auto flex flex-col justify-center items-center gap-10"
         >
           <div
-            class="flex flex-col justify-center items-center gap-5 max-lg:px-5"
+            class="flex flex-col justify-center items-start gap-5 max-xl:px-3"
           >
-            <p class="text-[32px] lg:text-[40px] font-[700] max-lg:text-left">
+            <p
+              class="text-[32px] lg:text-[40px] font-[700] max-lg:text-left self-center"
+            >
               Langkah Luar Biasa Englishvit
             </p>
-            <p class="text-[16px] lg:text-[20px] font-[400] max-lg:text-left">
+            <p
+              class="text-[16px] lg:text-[20px] font-[400] max-lg:text-left self-center"
+            >
               Berikut cerita singkat perjalanan luar biasa kami mengembangkan
               perusahaan Englishvit
             </p>
           </div>
-          <div class="w-full h-auto px-10">
+          <div class="w-full h-auto max-xl:px-8 px-10">
             <div class="flex flex-col relative gap-10">
               <!-- Vertical line in middle -->
               <div
@@ -436,8 +454,10 @@
                 <div
                   class="flex flex-col justify-start w-full lg:w-1/2 text-left lg:text-right pl-16 lg:pr-16"
                 >
-                  <p class="text-[28px] font-[700] pb-5">Konsep Awal</p>
-                  <p class="text-[20px] font-[400]">
+                  <p class="text-[20px] lg:text-[28px] font-[700] pb-5">
+                    Konsep Awal
+                  </p>
+                  <p class="text-[16px] lg:text-[20px] font-[400]">
                     Konsep awal dibuat, Cafe + Englishclub. Bermaksud memberikan
                     ruang untuk pelajar dan mahasiswa hangout dan belajar Bahasa
                     Inggris di tempat yang nyaman dan santai. Kami mulai
@@ -448,7 +468,7 @@
                 <div
                   class="absolute left-2 lg:left-1/2 transform -translate-x-1/2 bg-white border-3 border-[#e6e6e6] px-2 py-3 rounded-full"
                 >
-                  <p class="text-[18px] font-[600]">2018</p>
+                  <p class="text-[14px] lg:text-[18px] font-[600]">2018</p>
                 </div>
               </div>
 
@@ -458,10 +478,10 @@
                 <div
                   class="flex flex-col justify-end w-full lg:w-1/2 text-left pl-16"
                 >
-                  <p class="text-[28px] font-[700] pb-5">
+                  <p class="text-[20px] lg:text-[28px] font-[700] pb-5">
                     Inovasi Kelas Online
                   </p>
-                  <p class="text-[20px] font-[400]">
+                  <p class="text-[16px] lg:text-[20px] font-[400]">
                     Inovasi kelas online pertama kami buat dengan memanfaatkan
                     fitur group chat di aplikasi WhatsApp. Kelas online pertama
                     kami mendapat respon yang baik, dimulai dengan 60 peserta
@@ -471,7 +491,7 @@
                 <div
                   class="absolute left-2 lg:left-1/2 transform -translate-x-1/2 bg-white border-3 border-[#e6e6e6] px-2 py-3 rounded-full"
                 >
-                  <p class="text-[18px] font-[600]">2019</p>
+                  <p class="text-[14px] lg:text-[18px] font-[600]">2019</p>
                 </div>
               </div>
 
@@ -479,8 +499,10 @@
                 <div
                   class="flex flex-col justify-start w-full lg:w-1/2 text-left lg:text-right pl-16 lg:pr-16"
                 >
-                  <p class="text-[28px] font-[700] pb-5">Legalitas</p>
-                  <p class="text-[20px] font-[400]">
+                  <p class="text-[20px] lg:text-[28px] font-[700] pb-5">
+                    Legalitas
+                  </p>
+                  <p class="text-[16px] lg:text-[20px] font-[400]">
                     Seiring meningkatnya respon customers, kami memutuskan untuk
                     mendirikan PT WIYATA INSAN BESTARI. Kami melihat semakin
                     yakin untuk terus berproses untuk memberi dampak yang lebih
@@ -490,7 +512,7 @@
                 <div
                   class="absolute left-2 lg:left-1/2 transform -translate-x-1/2 bg-white border-3 border-[#e6e6e6] px-2 py-3 rounded-full"
                 >
-                  <p class="text-[18px] font-[600]">2020</p>
+                  <p class="text-[14px] lg:text-[18px] font-[600]">2020</p>
                 </div>
               </div>
 
@@ -498,8 +520,10 @@
                 class="w-auto h-auto flex place-content-start lg:place-content-end"
               >
                 <div class="flex flex-col w-full lg:w-1/2 text-left pl-16">
-                  <p class="text-[28px] font-[700] pb-5">Live Class</p>
-                  <p class="text-[20px] font-[400]">
+                  <p class="text-[20px] lg:text-[28px] font-[700] pb-5">
+                    Live Class
+                  </p>
+                  <p class="text-[16px] lg:text-[20px] font-[400]">
                     Live class pertama, kami mulai meningkatkan kualitas online
                     class dengan menambah media belajar supaya pembelajaran
                     lebih interaktif. Peningkatan signifikan terjadi, kami
@@ -513,8 +537,10 @@
                 <div
                   class="flex flex-col w-full lg:w-1/2 text-left lg:text-right pl-16 lg:pr-16"
                 >
-                  <p class="text-[28px] font-[700] pb-5">Learning Package</p>
-                  <p class="text-[20px] font-[400]">
+                  <p class="text-[20px] lg:text-[28px] font-[700] pb-5">
+                    Learning Package
+                  </p>
+                  <p class="text-[16px] lg:text-[20px] font-[400]">
                     Product learning package kamu luncurkan untuk membantu orang
                     belajar Bahasa Inggris secara mandiri. 3000 lebih
                     pendaftaran di peluncuran produk learning package ini.
@@ -523,7 +549,7 @@
                 <div
                   class="absolute left-2 lg:left-1/2 transform -translate-x-1/2 bg-white border-3 border-[#e6e6e6] px-2 py-3 rounded-full"
                 >
-                  <p class="text-[18px] font-[600]">2021</p>
+                  <p class="text-[14px] lg:text-[18px] font-[600]">2021</p>
                 </div>
               </div>
 
@@ -531,8 +557,10 @@
                 class="w-auto h-auto flex flex-row lg:flex-row-reverse relative"
               >
                 <div class="flex flex-col w-full lg:w-1/2 text-left pl-16">
-                  <p class="text-[28px] font-[700] pb-5">Launching Aplikasi</p>
-                  <p class="text-[20px] font-[400]">
+                  <p class="text-[20px] lg:text-[28px] font-[700] pb-5">
+                    Launching Aplikasi
+                  </p>
+                  <p class="text-[16px] lg:text-[20px] font-[400]">
                     Peluncuran aplikasi mobile untuk pengguna android sebagai
                     bentuk dukungan kepada semua orang yang ingin belajar Bahasa
                     Inggris mudah dan praktikal.
@@ -541,7 +569,7 @@
                 <div
                   class="absolute left-2 lg:left-1/2 transform -translate-x-1/2 bg-white border-3 border-[#e6e6e6] px-2 py-3 rounded-full"
                 >
-                  <p class="text-[18px] font-[600]">2022</p>
+                  <p class="text-[14px] lg:text-[18px] font-[600]">2022</p>
                 </div>
               </div>
             </div>
@@ -566,7 +594,7 @@
             </p>
             <button
               type="button"
-              class="bg-[#6D28D9] text-[#FFFFFF] text-[16px] lg:text-[18px] font-[700] w-fit px-5 py-2 rounded-md hover:cursor-pointer hover:brightness-75"
+              class="bg-[#6D28D9] text-[#FFFFFF] text-[16px] lg:text-[18px] font-[600] w-fit px-7 py-5 rounded-md hover:cursor-pointer hover:brightness-75"
             >
               Hubungi Kami Sekarang
             </button>
@@ -577,23 +605,27 @@
 
       <!-- Timeline Eduwork -->
       <div
-        class="max-w-[1200px] h-auto flex flex-col m-auto justify-center items-center max-xl:px-3 py-10"
+        class="max-w-[1200px] h-auto flex flex-col m-auto justify-center items-center py-10"
       >
         <div
           class="w-auto h-auto flex flex-col justify-center items-center gap-10"
         >
           <div
-            class="flex flex-col justify-center items-center gap-5 max-lg:px-5"
+            class="flex flex-col justify-center items-start gap-5 max-xl:px-3"
           >
-            <p class="text-[32px] lg:text-[40px] font-[700] max-lg:text-left">
+            <p
+              class="text-[32px] lg:text-[40px] font-[700] max-lg:text-left self-center"
+            >
               Langkah Luar Biasa Eduwork
             </p>
-            <p class="text-[16px] lg:text-[20px] font-[400] max-lg:text-left">
+            <p
+              class="text-[16px] lg:text-[20px] font-[400] max-lg:text-left self-center"
+            >
               Berikut cerita singkat perjalanan luar biasa kami mengembangkan
               perusahaan Englishvit
             </p>
           </div>
-          <div class="w-full h-auto px-10">
+          <div class="w-full h-auto max-xl:px-8 px-10">
             <div class="flex flex-col relative gap-10">
               <!-- Vertical line in middle -->
               <div
@@ -604,8 +636,10 @@
                 <div
                   class="flex flex-col justify-start w-full lg:w-1/2 text-left lg:text-right pl-16 lg:pr-16"
                 >
-                  <p class="text-[28px] font-[700] pb-5">Konsep Awal</p>
-                  <p class="text-[20px] font-[400]">
+                  <p class="text-[20px] lg:text-[28px] font-[700] pb-5">
+                    Konsep Awal
+                  </p>
+                  <p class="text-[16px] lg:text-[20px] font-[400]">
                     Konsep awal dibuat, Cafe + Englishclub. Bermaksud memberikan
                     ruang untuk pelajar dan mahasiswa hangout dan belajar Bahasa
                     Inggris di tempat yang nyaman dan santai. Kami mulai
@@ -616,7 +650,7 @@
                 <div
                   class="absolute left-2 lg:left-1/2 transform -translate-x-1/2 bg-white border-3 border-[#e6e6e6] px-2 py-3 rounded-full"
                 >
-                  <p class="text-[18px] font-[600]">2018</p>
+                  <p class="text-[14px] lg:text-[18px] font-[600]">2018</p>
                 </div>
               </div>
 
@@ -626,10 +660,10 @@
                 <div
                   class="flex flex-col justify-end w-full lg:w-1/2 text-left pl-16"
                 >
-                  <p class="text-[28px] font-[700] pb-5">
+                  <p class="text-[20px] lg:text-[28px] font-[700] pb-5">
                     Inovasi Kelas Online
                   </p>
-                  <p class="text-[20px] font-[400]">
+                  <p class="text-[16px] lg:text-[20px] font-[400]">
                     Inovasi kelas online pertama kami buat dengan memanfaatkan
                     fitur group chat di aplikasi WhatsApp. Kelas online pertama
                     kami mendapat respon yang baik, dimulai dengan 60 peserta
@@ -639,7 +673,7 @@
                 <div
                   class="absolute left-2 lg:left-1/2 transform -translate-x-1/2 bg-white border-3 border-[#e6e6e6] px-2 py-3 rounded-full"
                 >
-                  <p class="text-[18px] font-[600]">2019</p>
+                  <p class="text-[14px] lg:text-[18px] font-[600]">2019</p>
                 </div>
               </div>
 
@@ -647,8 +681,10 @@
                 <div
                   class="flex flex-col justify-start w-full lg:w-1/2 text-left lg:text-right pl-16 lg:pr-16"
                 >
-                  <p class="text-[28px] font-[700] pb-5">Legalitas</p>
-                  <p class="text-[20px] font-[400]">
+                  <p class="text-[20px] lg:text-[28px] font-[700] pb-5">
+                    Legalitas
+                  </p>
+                  <p class="text-[16px] lg:text-[20px] font-[400]">
                     Seiring meningkatnya respon customers, kami memutuskan untuk
                     mendirikan PT WIYATA INSAN BESTARI. Kami melihat semakin
                     yakin untuk terus berproses untuk memberi dampak yang lebih
@@ -658,7 +694,7 @@
                 <div
                   class="absolute left-2 lg:left-1/2 transform -translate-x-1/2 bg-white border-3 border-[#e6e6e6] px-2 py-3 rounded-full"
                 >
-                  <p class="text-[18px] font-[600]">2020</p>
+                  <p class="text-[14px] lg:text-[18px] font-[600]">2020</p>
                 </div>
               </div>
 
@@ -666,8 +702,10 @@
                 class="w-auto h-auto flex place-content-start lg:place-content-end"
               >
                 <div class="flex flex-col w-full lg:w-1/2 text-left pl-16">
-                  <p class="text-[28px] font-[700] pb-5">Live Class</p>
-                  <p class="text-[20px] font-[400]">
+                  <p class="text-[20px] lg:text-[28px] font-[700] pb-5">
+                    Live Class
+                  </p>
+                  <p class="text-[16px] lg:text-[20px] font-[400]">
                     Live class pertama, kami mulai meningkatkan kualitas online
                     class dengan menambah media belajar supaya pembelajaran
                     lebih interaktif. Peningkatan signifikan terjadi, kami
@@ -681,8 +719,10 @@
                 <div
                   class="flex flex-col w-full lg:w-1/2 text-left lg:text-right pl-16 lg:pr-16"
                 >
-                  <p class="text-[28px] font-[700] pb-5">Learning Package</p>
-                  <p class="text-[20px] font-[400]">
+                  <p class="text-[20px] lg:text-[28px] font-[700] pb-5">
+                    Learning Package
+                  </p>
+                  <p class="text-[16px] lg:text-[20px] font-[400]">
                     Product learning package kamu luncurkan untuk membantu orang
                     belajar Bahasa Inggris secara mandiri. 3000 lebih
                     pendaftaran di peluncuran produk learning package ini.
@@ -691,7 +731,7 @@
                 <div
                   class="absolute left-2 lg:left-1/2 transform -translate-x-1/2 bg-white border-3 border-[#e6e6e6] px-2 py-3 rounded-full"
                 >
-                  <p class="text-[18px] font-[600]">2021</p>
+                  <p class="text-[14px] lg:text-[18px] font-[600]">2021</p>
                 </div>
               </div>
 
@@ -699,8 +739,10 @@
                 class="w-auto h-auto flex flex-row lg:flex-row-reverse relative"
               >
                 <div class="flex flex-col w-full lg:w-1/2 text-left pl-16">
-                  <p class="text-[28px] font-[700] pb-5">Launching Aplikasi</p>
-                  <p class="text-[20px] font-[400]">
+                  <p class="text-[20px] lg:text-[28px] font-[700] pb-5">
+                    Launching Aplikasi
+                  </p>
+                  <p class="text-[16px] lg:text-[20px] font-[400]">
                     Peluncuran aplikasi mobile untuk pengguna android sebagai
                     bentuk dukungan kepada semua orang yang ingin belajar Bahasa
                     Inggris mudah dan praktikal.
@@ -709,7 +751,7 @@
                 <div
                   class="absolute left-2 lg:left-1/2 transform -translate-x-1/2 bg-white border-3 border-[#e6e6e6] px-2 py-3 rounded-full"
                 >
-                  <p class="text-[18px] font-[600]">2022</p>
+                  <p class="text-[14px] lg:text-[18px] font-[600]">2022</p>
                 </div>
               </div>
             </div>
@@ -718,7 +760,8 @@
       </div>
 
       <!-- Meet the team -->
-      <div
+      <!-- Di hide dulu -->
+      <!-- <div
         x-data="toggle"
         class="max-w-[1200px] h-auto mx-auto flex flex-col-reverse xl:flex-row justify-center items-center max-xl:px-3 py-10"
       >
@@ -873,283 +916,302 @@
             },
           }));
         });
-      </script>
+      </script> -->
 
       <!-- Upgrade skill mudah -->
       <div
         class="w-auto h-auto py-10 flex flex-col justify-center items-center bg-[#F5F3FF] max-xl:px-3"
       >
         <div class="max-w-[1200px] h-auto">
-          <div class="flex flex-col justify-center items-center pb-10">
-            <p class="text-[32px] md:text-[40px] font-[600] text-center pb-10">
-              Upgrade Skill Mudah, Dapat Kerja Cepat!
-            </p>
-            <p class="text-[16px] md:text-[20px] font-[400] text-center">
-              Belajar dari para ahli industri dengan kurikulum yang didesain
-              untuk membangun keterampilan Anda. Dapatkan bimbingan, pengalaman
-              langsung, dan kesempatan kerja setelah lulus!
-            </p>
-          </div>
-
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 w-fit h-auto m-auto justify-center items-center gap-5"
-          >
-            <div
-              class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
-            >
-              <img src="images/english.png" alt="English" />
-              <div
-                class="w-full h-full flex flex-col px-4 place-content-between"
+          <div class="max-lg:w-screen">
+            <div class="flex flex-col justify-center items-center pb-10">
+              <p
+                class="text-[32px] md:text-[40px] font-[600] text-center pb-10"
               >
-                <p
-                  class="text-[#6D28D9] text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-3 py-1 px-2 rounded-sm"
-                >
-                  Full-Time
-                </p>
-                <p class="text-[24px] font-[700] py-2">
-                  Offline English Teacher
-                </p>
-                <p class="text-[16px] font-[400]">
-                  Teaching English Offline for students with various different
-                  age groups and learning purposes.
-                </p>
-                <ul
-                  class="list-inside list-disc p-2 text-[16px] font-[400] py-4"
-                >
-                  <li>Work From Office</li>
-                  <li>Less Than 1 Year Experience</li>
-                </ul>
-                <button
-                  type="button"
-                  class="bg-[#6D28D9] text-[#FFFFFF] text-[16px] font-[700] w-full py-2 mb-3 rounded-md hover:cursor-pointer hover:brightness-75"
-                >
-                  Learn More
-                </button>
-              </div>
+                Upgrade Skill Mudah, Dapat Kerja Cepat!
+              </p>
+              <p class="text-[16px] md:text-[20px] font-[400] text-center">
+                Belajar dari para ahli industri dengan kurikulum yang didesain
+                untuk membangun keterampilan Anda. Dapatkan bimbingan,
+                pengalaman langsung, dan kesempatan kerja setelah lulus!
+              </p>
             </div>
 
-            <div
-              class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
-            >
-              <img src="images/graphic.png" alt="Graphic" />
+            <div class="w-full max-xl:overflow-x-scroll max-xl:px-3">
               <div
-                class="w-full h-full flex flex-col px-4 place-content-between"
+                class="grid grid-cols-8 xl:grid-cols-4 max-xl:min-w-[3000px] h-auto m-auto justify-center items-center gap-x-5 gap-y-14"
               >
-                <p
-                  class="text-[#6D28D9] text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-3 py-1 px-2 rounded-sm"
+                <div
+                  class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
                 >
-                  Full-Time
-                </p>
-                <p class="text-[24px] font-[700] py-2">Graphic Designer</p>
-                <p class="text-[16px] font-[400]">
-                  Designs graphics for social media contents and marketing needs
-                  such as poster and sales banner.
-                </p>
-                <ul
-                  class="list-inside list-disc p-2 text-[16px] font-[400] py-4"
-                >
-                  <li>Work From Office</li>
-                  <li>1 Year Experience</li>
-                </ul>
-                <button
-                  type="button"
-                  class="bg-[#6D28D9] text-[#FFFFFF] text-[16px] font-[700] w-full py-2 mb-3 rounded-md place-self-end hover:cursor-pointer hover:brightness-75"
-                >
-                  Learn More
-                </button>
-              </div>
-            </div>
+                  <img src="images/english.png" alt="English" />
+                  <div
+                    class="w-full h-full flex flex-col px-5 place-content-between"
+                  >
+                    <p
+                      class="text-[#6D28D9] text-[14px] lg:text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-5 py-1 px-2 rounded-sm"
+                    >
+                      Full-Time
+                    </p>
+                    <p class="text-[20px] lg:text-[24px] font-[500] py-2">
+                      Offline English Teacher
+                    </p>
+                    <p class="text-[14px] lg:text-[16px] font-[400]">
+                      Teaching English Offline for students with various
+                      different age groups and learning purposes.
+                    </p>
+                    <ul
+                      class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4"
+                    >
+                      <li>Work From Office</li>
+                      <li>Less Than 1 Year Experience</li>
+                    </ul>
+                    <button
+                      type="button"
+                      class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 mb-3 rounded-md hover:cursor-pointer hover:brightness-75"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
 
-            <div
-              class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
-            >
-              <img src="images/admin.png" alt="Admin" />
-              <div
-                class="w-full h-full flex flex-col px-4 place-content-between"
-              >
-                <p
-                  class="text-[#6D28D9] text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-3 py-1 px-2 rounded-sm"
+                <div
+                  class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
                 >
-                  Full-Time
-                </p>
-                <p class="text-[24px] font-[700] py-2">Admin Sales</p>
-                <p class="text-[16px] font-[400]">
-                  Helping companies improve sales efficiency, provide
-                  satisfactory customer and elevate sales.
-                </p>
-                <ul
-                  class="list-inside list-disc p-2 text-[16px] font-[400] py-4"
-                >
-                  <li>Work From Office</li>
-                  <li>1 Year Working Experience</li>
-                </ul>
-                <button
-                  type="button"
-                  class="bg-[#6D28D9] text-[#FFFFFF] text-[16px] font-[700] w-full mb-3 py-2 rounded-md hover:cursor-pointer hover:brightness-75"
-                >
-                  Learn More
-                </button>
-              </div>
-            </div>
+                  <img src="images/graphic.png" alt="Graphic" />
+                  <div
+                    class="w-full h-full flex flex-col px-5 place-content-between"
+                  >
+                    <p
+                      class="text-[#6D28D9] text-[14px] lg:text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-5 py-1 px-2 rounded-sm"
+                    >
+                      Full-Time
+                    </p>
+                    <p class="text-[20px] lg:text-[24px] font-[500] py-2">
+                      Graphic Designer
+                    </p>
+                    <p class="text-[14px] lg:text-[16px] font-[400]">
+                      Designs graphics for social media contents and marketing
+                      needs such as poster and sales banner.
+                    </p>
+                    <ul
+                      class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4"
+                    >
+                      <li>Work From Office</li>
+                      <li>1 Year Experience</li>
+                    </ul>
+                    <button
+                      type="button"
+                      class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 mb-3 rounded-md place-self-end hover:cursor-pointer hover:brightness-75"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
 
-            <div
-              class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
-            >
-              <img src="images/content.png" alt="Content" />
-              <div
-                class="w-full h-full flex flex-col px-4 place-content-between"
-              >
-                <p
-                  class="text-[#6D28D9] text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-3 py-1 px-2 rounded-sm"
+                <div
+                  class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
                 >
-                  Full-Time
-                </p>
-                <p class="text-[24px] font-[700] py-2">Content Creator</p>
-                <p class="text-[16px] font-[400]">
-                  Developing effective, engaging, and high-quality educational
-                  materials for learners and.
-                </p>
-                <ul
-                  class="list-inside list-disc p-2 text-[16px] font-[400] py-4"
-                >
-                  <li>Work From Office</li>
-                  <li>1 Year Working Experience</li>
-                </ul>
-                <button
-                  type="button"
-                  class="bg-[#6D28D9] text-[#FFFFFF] text-[16px] font-[700] w-full mb-3 py-2 rounded-md hover:cursor-pointer hover:brightness-75"
-                >
-                  Learn More
-                </button>
-              </div>
-            </div>
-            <div
-              class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
-            >
-              <img src="images/english.png" alt="English" />
-              <div
-                class="w-full h-full flex flex-col px-4 place-content-between"
-              >
-                <p
-                  class="text-[#6D28D9] text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-3 py-1 px-2 rounded-sm"
-                >
-                  Full-Time
-                </p>
-                <p class="text-[24px] font-[700] py-2">
-                  Offline English Teacher
-                </p>
-                <p class="text-[16px] font-[400]">
-                  Teaching English Offline for students with various different
-                  age groups and learning purposes.
-                </p>
-                <ul
-                  class="list-inside list-disc p-2 text-[16px] font-[400] py-4"
-                >
-                  <li>Work From Office</li>
-                  <li>Less Than 1 Year Experience</li>
-                </ul>
-                <button
-                  type="button"
-                  class="bg-[#6D28D9] text-[#FFFFFF] text-[16px] font-[700] w-full py-2 mb-3 rounded-md hover:cursor-pointer hover:brightness-75"
-                >
-                  Learn More
-                </button>
-              </div>
-            </div>
+                  <img src="images/admin.png" alt="Admin" />
+                  <div
+                    class="w-full h-full flex flex-col px-5 place-content-between"
+                  >
+                    <p
+                      class="text-[#6D28D9] text-[14px] lg:text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-5 py-1 px-2 rounded-sm"
+                    >
+                      Full-Time
+                    </p>
+                    <p class="text-[20px] lg:text-[24px] font-[500] py-2">
+                      Admin Sales
+                    </p>
+                    <p class="text-[14px] lg:text-[16px] font-[400]">
+                      Helping companies improve sales efficiency, provide
+                      satisfactory customer and elevate sales.
+                    </p>
+                    <ul
+                      class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4"
+                    >
+                      <li>Work From Office</li>
+                      <li>1 Year Working Experience</li>
+                    </ul>
+                    <button
+                      type="button"
+                      class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full mb-3 py-4 rounded-md hover:cursor-pointer hover:brightness-75"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
 
-            <div
-              class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
-            >
-              <img src="images/graphic.png" alt="Graphic" />
-              <div
-                class="w-full h-full flex flex-col px-4 place-content-between"
-              >
-                <p
-                  class="text-[#6D28D9] text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-3 py-1 px-2 rounded-sm"
+                <div
+                  class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
                 >
-                  Full-Time
-                </p>
-                <p class="text-[24px] font-[700] py-2">Graphic Designer</p>
-                <p class="text-[16px] font-[400]">
-                  Designs graphics for social media contents and marketing needs
-                  such as poster and sales banner.
-                </p>
-                <ul
-                  class="list-inside list-disc p-2 text-[16px] font-[400] py-4"
-                >
-                  <li>Work From Office</li>
-                  <li>1 Year Experience</li>
-                </ul>
-                <button
-                  type="button"
-                  class="bg-[#6D28D9] text-[#FFFFFF] text-[16px] font-[700] w-full py-2 mb-3 rounded-md place-self-end hover:cursor-pointer hover:brightness-75"
-                >
-                  Learn More
-                </button>
-              </div>
-            </div>
+                  <img src="images/content.png" alt="Content" />
+                  <div
+                    class="w-full h-full flex flex-col px-5 place-content-between"
+                  >
+                    <p
+                      class="text-[#6D28D9] text-[14px] lg:text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-5 py-1 px-2 rounded-sm"
+                    >
+                      Full-Time
+                    </p>
+                    <p class="text-[20px] lg:text-[24px] font-[500] py-2">
+                      Content Creator
+                    </p>
+                    <p class="text-[14px] lg:text-[16px] font-[400]">
+                      Developing effective, engaging, and high-quality
+                      educational materials for learners and.
+                    </p>
+                    <ul
+                      class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4"
+                    >
+                      <li>Work From Office</li>
+                      <li>1 Year Working Experience</li>
+                    </ul>
+                    <button
+                      type="button"
+                      class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full mb-3 py-4 rounded-md hover:cursor-pointer hover:brightness-75"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
 
-            <div
-              class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
-            >
-              <img src="images/admin.png" alt="Admin" />
-              <div
-                class="w-full h-full flex flex-col px-4 place-content-between"
-              >
-                <p
-                  class="text-[#6D28D9] text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-3 py-1 px-2 rounded-sm"
+                <div
+                  class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
                 >
-                  Full-Time
-                </p>
-                <p class="text-[24px] font-[700] py-2">Admin Sales</p>
-                <p class="text-[16px] font-[400]">
-                  Helping companies improve sales efficiency, provide
-                  satisfactory customer and elevate sales.
-                </p>
-                <ul
-                  class="list-inside list-disc p-2 text-[16px] font-[400] py-4"
-                >
-                  <li>Work From Office</li>
-                  <li>1 Year Working Experience</li>
-                </ul>
-                <button
-                  type="button"
-                  class="bg-[#6D28D9] text-[#FFFFFF] text-[16px] font-[700] w-full mb-3 py-2 rounded-md hover:cursor-pointer hover:brightness-75"
-                >
-                  Learn More
-                </button>
-              </div>
-            </div>
+                  <img src="images/english.png" alt="English" />
+                  <div
+                    class="w-full h-full flex flex-col px-5 place-content-between"
+                  >
+                    <p
+                      class="text-[#6D28D9] text-[14px] lg:text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-5 py-1 px-2 rounded-sm"
+                    >
+                      Full-Time
+                    </p>
+                    <p class="text-[20px] lg:text-[24px] font-[500] py-2">
+                      Offline English Teacher
+                    </p>
+                    <p class="text-[14px] lg:text-[16px] font-[400]">
+                      Teaching English Offline for students with various
+                      different age groups and learning purposes.
+                    </p>
+                    <ul
+                      class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4"
+                    >
+                      <li>Work From Office</li>
+                      <li>Less Than 1 Year Experience</li>
+                    </ul>
+                    <button
+                      type="button"
+                      class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 mb-3 rounded-md hover:cursor-pointer hover:brightness-75"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
 
-            <div
-              class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
-            >
-              <img src="images/content.png" alt="Content" />
-              <div
-                class="w-full h-full flex flex-col px-4 place-content-between"
-              >
-                <p
-                  class="text-[#6D28D9] text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-3 py-1 px-2 rounded-sm"
+                <div
+                  class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
                 >
-                  Full-Time
-                </p>
-                <p class="text-[24px] font-[700] py-2">Content Creator</p>
-                <p class="text-[16px] font-[400]">
-                  Developing effective, engaging, and high-quality educational
-                  materials for learners and.
-                </p>
-                <ul
-                  class="list-inside list-disc p-2 text-[16px] font-[400] py-4"
+                  <img src="images/graphic.png" alt="Graphic" />
+                  <div
+                    class="w-full h-full flex flex-col px-5 place-content-between"
+                  >
+                    <p
+                      class="text-[#6D28D9] text-[14px] lg:text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-5 py-1 px-2 rounded-sm"
+                    >
+                      Full-Time
+                    </p>
+                    <p class="text-[20px] lg:text-[24px] font-[500] py-2">
+                      Graphic Designer
+                    </p>
+                    <p class="text-[14px] lg:text-[16px] font-[400]">
+                      Designs graphics for social media contents and marketing
+                      needs such as poster and sales banner.
+                    </p>
+                    <ul
+                      class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4"
+                    >
+                      <li>Work From Office</li>
+                      <li>1 Year Experience</li>
+                    </ul>
+                    <button
+                      type="button"
+                      class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 mb-3 rounded-md place-self-end hover:cursor-pointer hover:brightness-75"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
                 >
-                  <li>Work From Office</li>
-                  <li>1 Year Working Experience</li>
-                </ul>
-                <button
-                  type="button"
-                  class="bg-[#6D28D9] text-[#FFFFFF] text-[16px] font-[700] w-full mb-3 py-2 rounded-md hover:cursor-pointer hover:brightness-75"
+                  <img src="images/admin.png" alt="Admin" />
+                  <div
+                    class="w-full h-full flex flex-col px-5 place-content-between"
+                  >
+                    <p
+                      class="text-[#6D28D9] text-[14px] lg:text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-5 py-1 px-2 rounded-sm"
+                    >
+                      Full-Time
+                    </p>
+                    <p class="text-[20px] lg:text-[24px] font-[500] py-2">
+                      Admin Sales
+                    </p>
+                    <p class="text-[14px] lg:text-[16px] font-[400]">
+                      Helping companies improve sales efficiency, provide
+                      satisfactory customer and elevate sales.
+                    </p>
+                    <ul
+                      class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4"
+                    >
+                      <li>Work From Office</li>
+                      <li>1 Year Working Experience</li>
+                    </ul>
+                    <button
+                      type="button"
+                      class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full mb-3 py-4 rounded-md hover:cursor-pointer hover:brightness-75"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg"
                 >
-                  Learn More
-                </button>
+                  <img src="images/content.png" alt="Content" />
+                  <div
+                    class="w-full h-full flex flex-col px-5 place-content-between"
+                  >
+                    <p
+                      class="text-[#6D28D9] text-[14px] lg:text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-5 py-1 px-2 rounded-sm"
+                    >
+                      Full-Time
+                    </p>
+                    <p class="text-[20px] lg:text-[24px] font-[500] py-2">
+                      Content Creator
+                    </p>
+                    <p class="text-[14px] lg:text-[16px] font-[400]">
+                      Developing effective, engaging, and high-quality
+                      educational materials for learners and.
+                    </p>
+                    <ul
+                      class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4"
+                    >
+                      <li>Work From Office</li>
+                      <li>1 Year Working Experience</li>
+                    </ul>
+                    <button
+                      type="button"
+                      class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full mb-3 py-4 rounded-md hover:cursor-pointer hover:brightness-75"
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1172,9 +1234,9 @@
           </p>
           <button
             type="button"
-            class="bg-[#6D28D9] text-[#FFFFFF] text-[16px] lg:text-[18px] font-[700] w-fit px-5 py-2 rounded-md hover:cursor-pointer hover:brightness-75"
+            class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[600] w-fit px-7 py-5 rounded-md hover:cursor-pointer hover:brightness-75"
           >
-            Konsultasi Sekarang
+            <p class="opacity-95">Konsultasi Sekarang</p>
           </button>
         </div>
         <img src="images/develop.png" alt="Develop" />
@@ -1195,9 +1257,9 @@
             </p>
             <button
               type="button"
-              class="bg-[#6D28D9] px-[32px] py-[18px] rounded-md text-[#FFFFFF] text-[16px] lg:text-[18px] font-[700] hover:cursor-pointer hover:brightness-90"
+              class="bg-[#6D28D9] px-[32px] py-[18px] rounded-md text-[#FFFFFF] text-[16px] lg:text-[18px] font-[600] hover:cursor-pointer hover:brightness-90"
             >
-              Lihat Semua
+              <p class="opacity-90">Lihat Semua</p>
             </button>
           </div>
           <div
@@ -1329,7 +1391,7 @@
         class="bg-radial from-[#3e1683] from-10% to-[#2E1065] to-100% w-auto h-auto text-[#FFFFFF] pt-20 pb-10 max-xl:px-3"
       >
         <div class="max-w-[1200px] h-auto flex flex-col m-auto">
-          <div class="flex max-md:flex-col border-b pb-10 gap-8">
+          <div class="flex max-md:flex-col border-b-[1px] pb-10 gap-8">
             <div class="flex max-md:flex-col justify-center gap-10 pb-10">
               <div class="w-auto h-auto flex flex-col items-center gap-5">
                 <div
