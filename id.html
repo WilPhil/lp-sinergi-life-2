@@ -36,7 +36,7 @@
 
   <div class="w-full h-auto flex flex-col overflow-x-hidden">
     <!-- Nav Bar & Title -->
-    <div class="w-full min-h-screen h-auto flex justify-center text-white brightness-110 lg:pb-10 z-30">
+    <div class="w-full min-h-screen flex justify-center text-white brightness-110 lg:pb-10 z-30">
       <div x-data="{ open: false, mobileMenu: false }"
         class="relative flex flex-col items-start max-w-[1200px] max-md:h-screen pb-10">
         <div class="relative z-30 flex w-full h-auto pt-2 max-xl:px-3 justify-between">
@@ -57,11 +57,11 @@
             </svg>
           </div>
           <div class="max-lg:hidden flex justify-center items-center gap-8 text-[16px]">
-            <a href="" class="font-[700] underline underline-offset-8 decoration-2 decoration-amber-500">Home</a>
-            <a href="#work" class="hover:font-[600] hover:opacity-100 opacity-70">Work</a>
-            <a href="#about" class="hover:font-[600] hover:opacity-100 opacity-70">About</a>
-            <a href="#career" class="hover:font-[600] hover:opacity-100 opacity-70">Career</a>
-            <a href="#contact" class="hover:font-[600] hover:opacity-100 opacity-70">Contact</a>
+            <a href="" class="font-[700] underline underline-offset-8 decoration-2 decoration-amber-500">Beranda</a>
+            <a href="#work" class="hover:font-[600] hover:opacity-100 opacity-70">Pekerjaan</a>
+            <a href="#about" class="hover:font-[600] hover:opacity-100 opacity-70">Tentang</a>
+            <a href="#career" class="hover:font-[600] hover:opacity-100 opacity-70">Karir</a>
+            <a href="#contact" class="hover:font-[600] hover:opacity-100 opacity-70">Kontak</a>
           </div>
           <div x-on:click="open =! open"
             class="max-lg:hidden flex justify-center items-center gap-3 hover:cursor-pointer">
@@ -81,15 +81,15 @@
           class="lg:hidden fixed top-[60px] inset-0 z-40 bg-[#F5F3FF] bg-opacity-95 p-4 h-fit m-4 rounded-lg shadow-lg">
           <div class="flex flex-col items-center gap-2 text-[20px] text-[#151517]">
             <a href="" @click="mobileMenu = false"
-              class="font-[700] underline underline-offset-8 decoration-2 decoration-amber-500 py-3">Home</a>
+              class="font-[700] underline underline-offset-8 decoration-2 decoration-amber-500 py-3">Beranda</a>
             <a href="#work" @click="mobileMenu = false"
-              class="hover:font-[600] hover:opacity-100 opacity-70 py-3">Work</a>
+              class="hover:font-[600] hover:opacity-100 opacity-70 py-3">Pekerjaan</a>
             <a href="#about" @click="mobileMenu = false"
-              class="hover:font-[600] hover:opacity-100 opacity-70 py-3">About</a>
+              class="hover:font-[600] hover:opacity-100 opacity-70 py-3">Tentang</a>
             <a href="#career" @click="mobileMenu = false"
-              class="hover:font-[600] hover:opacity-100 opacity-70 py-3">Career</a>
+              class="hover:font-[600] hover:opacity-100 opacity-70 py-3">Karir</a>
             <a href="#contact" @click="mobileMenu = false"
-              class="hover:font-[600] hover:opacity-100 opacity-70 py-3">Contact</a>
+              class="hover:font-[600] hover:opacity-100 opacity-70 py-3">Kontak</a>
 
             <!-- Language Selector for Mobile -->
             <div class="w-full border-t border-gray-700 pt-6 mt-4">
@@ -97,12 +97,12 @@
               <div class="flex flex-col gap-4 text-white">
                 <div @click="mobileMenu = false"
                   class="flex flex-row gap-3 items-center justify-center bg-[#6D28D9] hover:bg-[#6D28D9]/[0.6] p-3 rounded-lg cursor-pointer">
-                  <img src="images/Indonesia.png" alt="Indonesia" />
+                  <img src="images/Indonesia.png" class="w-5" alt="Indonesia" />
                   <a href="id.html">Bahasa Indonesia</a>
                 </div>
                 <div @click="mobileMenu = false"
                   class="flex flex-row gap-3 items-center justify-center bg-[#6D28D9] hover:bg-[#6D28D9]/[0.6] p-3 rounded-lg cursor-pointer">
-                  <img src="images/Indonesia.png" alt="Indonesia" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/1280px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" class="w-5" alt="Indonesia" />
                   <a href="eng.html">English</a>
                 </div>
               </div>
@@ -116,21 +116,21 @@
             class="max-lg:hidden absolute right-5 xl:right-0 top-1 w-[186px] h-[86px] flex flex-col justify-center px-3 gap-2 rounded-lg bg-[#FFFFFF] text-[#212529] text-[14px] font-[400]">
             <img src="images/polygon.png" alt="polygon" class="absolute right-6 -inset-y-2 rotate-180" />
             <div class="flex flex-row gap-3 items-center" x-on:click="changeLanguage('id')">
-              <img src="images/Indonesia.png" class="w-[20px]" alt="Indonesia" />
+              <img src="images/Indonesia.png" class="w-5" alt="Indonesia" />
               <a href="id.html">Bahasa Indonesia</a>
             </div>
             <div class="flex flex-row gap-3 items-center" x-on:click="changeLanguage('en')">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/1280px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" class="w-[20px]" alt="Indonesia" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/1280px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" class="w-5" alt="english" />
               <a href="eng.html">English</a>
             </div>
           </div>
           <p class="text-[32px] lg:text-[50px] font-[700] text-center lg:leading-[58px] lg:px-8">
-            Advance Your Career with High-Quality Education!
+            Tingkatkan Karirmu dengan Pendidikan Berkualitas Tinggi!
           </p>
           <p class="text-[14px] lg:text-[18px] font-[400] text-center lg:px-30 opacity-80">
-            Learn from industry experts with a curriculum designed to build
-            your skills. Gain mentorship, hands-on experience, and
-            job-opportunities after graduation!
+            Belajar dari ahli industri dengan kurikulum yang dirancang untuk
+            membangun keterampilanmu. Dapatkan mentorship, pengalaman tangan,
+            dan kesempatan kerja setelah lulus!
           </p>
           <a href="#career" class="w-fit px-5 py-3 bg-[#6D28D9] rounded-[6px] hover:brightness-90">
             Join Us
@@ -141,45 +141,46 @@
 
 
     <!-- Key Features -->
-    <div class="max-xl:hidden relative z-20 w-[1200px] h-[200px] mx-auto max-xl:px-3 flex justify-center items-center">
-      <div class="max-xl:hidden z-30 flex mb-52">
+    <div class="hidden relative z-20 w-[1200px] h-[200px] mx-auto max-xl:px-3 xl:flex justify-center items-center">
+      <div class="z-30 flex mb-52">
         <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4 text-[#151517]">
           <div class="w-auto bg-[#F5F3FF] px-7 py-5">
             <img src="images/mentor.png" alt="Mentor" />
-            <p class="text-[20px] font-[700] py-2">100+ Experienced Mentor</p>
+            <p class="text-[20px] font-[700] py-2">100+ Mentor Berpengalaman</p>
             <p class="text-[16px] font-[400] text-[#151517]/[0.8]">
-              Learn directly from industry professionals through live Q&A
-              sessions, project reviews, and private mentoring.
+              Belajar langsung dari para profesional industri melalui sesi tanya jawab
+              langsung, tinjauan proyek, dan mentoring pribadi.
             </p>
           </div>
           <div class="w-auto bg-[#F5F3FF] px-7 py-5">
             <img src="images/flexible.png" alt="Flexible" />
             <p class="text-[20px] font-[700] py-2">
-              Flexible Learning - Anytime, Anywhere
+              Pembelajaran Fleksibel - Kapanpun dan Dimanapun
             </p>
             <p class="text-[16px] font-[400] text-[#151517]/[0.8]">
-              Live & On-Demand Classes - Learn at your own pace or join
-              scheduled live sessions with top mentors.
+              Kelas Langsung & On-Demand - Belajar dengan kecepatan Anda
+              sendiri atau bergabung dengan sesi langsung yang dijadwalkan
+              dengan mentor terbaik.
             </p>
           </div>
           <div class="w-auto bg-[#F5F3FF] px-7 py-5">
             <img src="images/project.png" alt="Project" />
             <p class="text-[20px] font-[700] py-2">
-              Real-World Project-Based Learning
+              Pembelajaran Berbasis Proyek Dunia Nyata
             </p>
             <p class="text-[16px] font-[400] text-[#151517]/[0.8]">
-              Work on industry-relevant projects and build a strong portfolio
-              to showcase your skills to employers.
+              Kerjakan proyek yang relevan dengan industri dan bangun portofolio
+              yang kuat untuk menunjukkan keterampilan Anda kepada pemberi kerja.
             </p>
           </div>
           <div class="w-auto bg-[#F5F3FF] px-7 py-5">
             <img src="images/moneyback.png" alt="Money" />
             <p class="text-[20px] font-[700] py-2">
-              100% Money-Back Guarantee
+              Jaminan Pengembalian Uang 100%
             </p>
             <p class="text-[16px] font-400 text-[#151517]/[0.8]">
-              We are fully confident in the quality of our education. If
-              you're not satisfied, we guarantee a 100% refund.
+              Kami sangat percaya diri dengan kualitas pendidikan kami. Jika
+              Anda tidak puas, kami menjamin pengembalian uang 100%.
             </p>
           </div>
         </div>
@@ -192,38 +193,39 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4 text-[#151517]">
         <div class="w-auto bg-[#F5F3FF] shadow p-5">
           <img src="images/mentor.png" alt="Mentor" />
-          <p class="text-[20px] font-[700] py-2">100+ Experienced Mentor</p>
+          <p class="text-[20px] font-[700] py-2">100+ Mentor Berpengalaman</p>
           <p class="text-[16px] font-[400] text-[#151517]/[0.8]">
-            Learn directly from industry professionals through live Q&A
-            sessions, project reviews, and private mentoring.
+            Belajar langsung dari para profesional industri melalui sesi tanya jawab
+            langsung, tinjauan proyek, dan mentoring pribadi.
           </p>
         </div>
         <div class="w-auto bg-[#F5F3FF] shadow p-5">
           <img src="images/flexible.png" alt="Flexible" />
           <p class="text-[20px] font-[700] py-2">
-            Flexible Learning - Anytime, Anywhere
+            Pembelajaran Fleksibel - Kapanpun dan Dimanapun
           </p>
           <p class="text-[16px] font-[400] text-[#151517]/[0.8]">
-            Live & On-Demand Classes - Learn at your own pace or join
-            scheduled live sessions with top mentors.
+            Kelas Langsung & On-Demand - Belajar dengan kecepatan Anda sendiri
+            atau bergabung dengan sesi langsung yang dijadwalkan dengan mentor
+            terbaik.
           </p>
         </div>
         <div class="w-auto bg-[#F5F3FF] shadow p-5">
           <img src="images/project.png" alt="Project" />
           <p class="text-[20px] font-[700] py-2">
-            Real-World Project-Based Learning
+            Pembelajaran Berbasis Proyek Dunia Nyata
           </p>
           <p class="text-[16px] font-[400] text-[#151517]/[0.8]">
-            Work on industry-relevant projects and build a strong portfolio to
-            showcase your skills to employers.
+            Kerjakan proyek yang relevan dengan industri dan bangun portofolio
+            yang kuat untuk menunjukkan keterampilan Anda kepada pemberi kerja.
           </p>
         </div>
         <div class="w-auto bg-[#F5F3FF] shadow p-5">
           <img src="images/moneyback.png" alt="Money" />
-          <p class="text-[20px] font-[700] py-2">100% Money-Back Guarantee</p>
+          <p class="text-[20px] font-[700] py-2">Jaminan Pengembalian Uang 100%</p>
           <p class="text-[16px] font-[400] text-[#151517]/[0.8]">
-            We are fully confident in the quality of our education. If you're
-            not satisfied, we guarantee a 100% refund.
+            Kami sangat percaya diri dengan kualitas pendidikan kami. Jika Anda
+            tidak puas, kami menjamin pengembalian uang 100%.
           </p>
         </div>
       </div>
@@ -233,7 +235,7 @@
     <div class="max-w-[1200px] h-auto mx-auto px-4 lg:px-0 py-10 lg:pb-16 justify-center items-center" id="work">
       <div class="w-full flex flex-col">
         <p class="text-[24px] lg:text-[40px] font-[700] max-md:pb-8 pb-16 text-center">
-          Trusted by 100+ Leading Companies & Institutions
+          Dipercaya oleh 100+ Perusahaan dan Lembaga Terkemuka
         </p>
         <div class="grid grid-cols-3 md:grid-cols-6 gap-6 h-[154px] sm:h-[200px] md:h-[154px]"
           x-data="rotatingImageGrid()">
@@ -366,25 +368,23 @@
       <div class="max-w-[1200px] h-auto m-auto flex max-lg:flex-col">
         <div class="w-auto h-auto flex flex-col justify-center items-center lg:pr-10 pb-8 gap-[30px] lg:gap-[50px]">
           <p class="text-3xl lg:text-[40px] font-[700] self-start">
-            About Us
+            Tentang Kami
           </p>
           <div
             class="flex flex-col font-[#151517] text-md lg:text-[20px] font-normal lg:leading-[30px] gap-5 text-[#151517]/[0.8]">
             <p>
-              Sinergi Insan Andalan serves as a bridge between non-formal
-              education and industry needs. We understand that one of the
-              biggest challenges for graduates and job seekers is not just
-              acquiring theoretical knowledge but also developing practical,
-              job-ready skills that meet industry demands.
+              Sinergi Insan Andalan berfungsi sebagai jembatan antara pendidikan non-formal
+              dan kebutuhan industri. Kami memahami bahwa salah satu tantangan terbesar
+              bagi lulusan dan pencari kerja adalah tidak hanya memperoleh pengetahuan teoretis
+              tetapi juga mengembangkan keterampilan praktis yang sesuai dengan kebutuhan industri.
             </p>
             <p>
-              With a hands-on, industry-driven, and results-oriented approach,
-              we offer training programs, bootcamps, and certifications
-              designed to equip individuals with the skills that today’s
-              companies are actively looking for. We believe that learning is
-              not just about theory—it’s about real-world application and
-              meaningful experiences that prepare individuals for the
-              workforce.
+              Dengan pendekatan yang berorientasi pada hasil, berbasis industri, dan
+              berfokus pada pelatihan, kami menawarkan program pelatihan, bootcamp, dan
+              sertifikasi yang dirancang untuk memberikan individu keterampilan yang
+              dibutuhkan perusahaan saat ini. Kami percaya bahwa belajar tidak hanya
+              tentang teori, tetapi tentang aplikasi dunia nyata dan pengalaman yang
+              bermakna yang mempersiapkan individu untuk memasuki dunia kerja.
             </p>
           </div>
         </div>
@@ -400,39 +400,38 @@
       <div class="w-full flex flex-col justify-center max-lg:items-start gap-5 lg:pl-10">
         <img src="images/englishvitlogo.png" alt="English Vit Logo" class="self-start max-w-[128px] lg:max-w-none" />
         <p class="text-[32px] xl:text-[40px] leading-[55px] font-bold">
-          One Stop Platform to Learn English Directly to Practice
+          Platform Satu-Stop untuk Belajar Bahasa Inggris Langsung ke Praktik
         </p>
         <p class="text-[16px] xl:text-[20px] text-light text-[#151517]/[0.8]">
-          Learn English with an interactive method that can be directly
-          applied in daily practice, so it can be understood and mastered more
-          quickly.
+          Belajar Bahasa Inggris dengan metode interaktif yang dapat langsung
+          diterapkan dalam praktik sehari-hari, sehingga dapat dipahami dan
+          dikuasai lebih cepat.
         </p>
         <div class="flex flex-col gap-3 text-[16px] xl:text-[20px]">
           <div class="flex flex-row justify-start gap-4">
             <img src="images/check.png" alt="Check" class="self-start" />
             <p class="text-[#151517]/[0.8]">
-              Practical Methods - Focus on direct use in everyday
-              conversation.
+              Metode Praktis - Berfokus pada penggunaan langsung dalam
+              percakapan sehari-hari.
             </p>
           </div>
           <div class="flex flex-row justify-start gap-4">
             <img src="images/check.png" alt="Check" class="self-start" />
             <p class="text-[#151517]/[0.8]">
-              Interactive Environment - Learn with tutors and active
-              participants.
+              Lingkungan Interaktif - Belajar dengan tutor dan peserta aktif.
             </p>
           </div>
           <div class="flex flex-row justify-start gap-4">
             <img src="images/check.png" alt="Check" class="self-start" />
             <p class="text-[#151517]/[0.8]">
-              Relevant Material - adapted to the needs of the world of work
-              and social life.
+              Materi yang Relevan - disesuaikan dengan kebutuhan dunia kerja
+              dan kehidupan sosial.
             </p>
           </div>
         </div>
         <a href=""
           class="text-[16px] lg:text-[18px] text-[#6D28D9] font-light self-start hover:font-[600] hover:underline">
-          Learn More
+          Pelajari Lebih Lanjut
         </a>
       </div>
     </div>
@@ -446,35 +445,36 @@
           Upgrade Skill Mudah, Dapat Kerja Cepat!
         </p>
         <p class="text-[16px] lg:text-[20px] text-light text-[#151517]/[0.8]">
-          Learn English with an interactive method that can be directly
-          applied in daily practice, so it can be understood and mastered more
-          quickly.
+          Belajar Bahasa Inggris dengan metode interaktif yang dapat
+          langsung diterapkan dalam praktik sehari-hari, sehingga dapat
+          dipahami dan dikuasai lebih cepat.
         </p>
         <div class="flex flex-col gap-3 text-[16px] xl:text-[20px]">
           <div class="flex flex-row justify-start gap-4">
             <img src="images/check.png" alt="Check" class="self-start" />
             <p class="text-[#151517]/[0.8]">
-              Practical Methods - Focus on direct use in everyday
-              conversation.
+              Metode Praktis - Berfokus pada penggunaan langsung dalam
+              percakapan sehari-hari.
             </p>
           </div>
           <div class="flex flex-row justify-start gap-4">
             <img src="images/check.png" alt="Check" class="self-start" />
             <p class="text-[#151517]/[0.8]">
-              Interactive Environment - Learn with tutors and active
-              participants.
+              Lingkungan Interaktif - Belajar dengan tutor dan peserta
+              aktif.
             </p>
           </div>
           <div class="flex flex-row justify-start gap-4">
             <img src="images/check.png" alt="Check" class="self-start" />
             <p class="text-[#151517]/[0.8]">
-              Professional Mentoring – Mentored by experienced teachers.
+              Mentoring Profesional - Dimentori oleh guru yang
+              berpengalaman.
             </p>
           </div>
         </div>
         <a href=""
           class="text-[16px] xl:text-[18px] text-[#6D28D9] font-light self-start hover:font-[600] hover:underline">
-          Learn More
+          Pelajari Lebih Lanjut
         </a>
       </div>
       <img src="images/eduworkk.png" alt="Eduwork" class="max-w-[380px] lg:max-w-none" />
@@ -929,7 +929,7 @@
             <div
               class="grid grid-cols-7 xl:grid-cols-4 max-xl:min-w-[2000px] h-auto m-auto justify-center items-center gap-5">
               <div class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg">
-                <img src="images/sales.webp" class="object-cover w-full aspect-video rounded-t-lg" alt="English" />
+                <img class="object-cover w-full aspect-video rounded-t-lg" src="images/sales.webp" alt="English" />
                 <div class="w-full h-full flex flex-col px-5 place-content-between">
                   <p
                     class="text-[#6D28D9] text-[14px] lg:text-[16px] font-[500] bg-[#EDE9FE] w-fit mt-5 py-1 px-2 rounded-sm">
@@ -939,8 +939,8 @@
                     Admin Sales
                   </p>
                   <p class="mb-5 text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8]">
-                    Handle course orders, respond to inquiries, manage CRM data, assist in reporting, invoicing, and
-                    support the sales team.
+                    Menangani pesanan kursus, merespons pertanyaan, mengelola data CRM, membantu dalam pelaporan, pembuatan
+                    tagihan, dan mendukung tim penjualan.
                   </p>
                   <!-- <ul class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4">
                     <li>Work From Office</li>
@@ -948,7 +948,7 @@
                   </ul> -->
                   <button type="button"
                     class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 mb-3 rounded-md hover:cursor-pointer hover:brightness-75">
-                    Learn More
+                    Pelajari Lebih Lanjut
                   </button>
                 </div>
               </div>
@@ -964,7 +964,7 @@
                     Performance Marketing
                   </p>
                   <p class="mb-5 text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8]">
-                    Run and optimize paid ads, manage budgets, analyze performance, and collaborate on ad creatives.
+                    Jalankan dan optimalkan iklan berbayar, kelola anggaran, analisis kinerja, dan berkolaborasi pada kreatif iklan.
                   </p>
                   <!-- <ul class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4">
                     <li>Work From Office</li>
@@ -972,7 +972,7 @@
                   </ul> -->
                   <button type="button"
                     class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 mb-3 rounded-md place-self-end hover:cursor-pointer hover:brightness-75">
-                    Learn More
+                    Pelajari Lebih Lanjut
                   </button>
                 </div>
               </div>
@@ -988,7 +988,7 @@
                     Sales & Marketing Manager
                   </p>
                   <p class="mb-5 text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8]">
-                    Lead the sales team, develop strategies, manage clients, analyze markets, and oversee performance.
+                    Memimpin tim penjualan, mengembangkan strategi, mengelola klien, menganalisis pasar, dan mengawasi kinerja.
                   </p>
                   <!-- <ul class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4">
                     <li>Work From Office</li>
@@ -996,7 +996,7 @@
                   </ul> -->
                   <button type="button"
                     class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full mb-3 py-4 rounded-md hover:cursor-pointer hover:brightness-75">
-                    Learn More
+                    Pelajari Lebih Lanjut
                   </button>
                 </div>
               </div>
@@ -1012,8 +1012,7 @@
                     Product Development
                   </p>
                   <p class="mb-5 text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8]">
-                    Design and improve educational products, collaborate with experts, and ensure effective,
-                    user-centered learning tools.
+                    Desain dan perbaiki produk edukatif, berkolaborasi dengan para ahli, dan pastikan alat pembelajaran yang efektif dan berpusat pada pengguna.
                   </p>
                   <!-- <ul class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4">
                     <li>Work From Office</li>
@@ -1021,7 +1020,7 @@
                   </ul> -->
                   <button type="button"
                     class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full mb-3 py-4 rounded-md hover:cursor-pointer hover:brightness-75">
-                    Learn More
+                    Pelajari Lebih Lanjut
                   </button>
                 </div>
               </div>
@@ -1037,8 +1036,7 @@
                     Full Stack Programmer
                   </p>
                   <p class="mb-5 text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8]">
-                    Develop full-stack apps using Laravel, React, Node.js, and mentor learners through video-based
-                    content.
+                    Kembangkan aplikasi full-stack menggunakan Laravel, React, Node.js, dan membimbing pelajar melalui konten berbasis video.
                   </p>
                   <!-- <ul class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4">
                     <li>Work From Office</li>
@@ -1046,7 +1044,7 @@
                   </ul> -->
                   <button type="button"
                     class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 mb-3 rounded-md hover:cursor-pointer hover:brightness-75">
-                    Learn More
+                    Pelajari Lebih Lanjut
                   </button>
                 </div>
               </div>
@@ -1062,7 +1060,7 @@
                     Quality Assurance
                   </p>
                   <p class="mb-5 text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8]">
-                    Create and run tests, track bugs, ensure performance and security, and collaborate with developers.
+                    Buat dan jalankan tes, lacak bug, pastikan kinerja dan keamanan, serta berkolaborasi dengan pengembang.
                   </p>
                   <!-- <ul class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4">
                     <li>Work From Office</li>
@@ -1070,7 +1068,7 @@
                   </ul> -->
                   <button type="button"
                     class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 mb-3 rounded-md place-self-end hover:cursor-pointer hover:brightness-75">
-                    Learn More
+                    Pelajari Lebih Lanjut
                   </button>
                 </div>
               </div>
@@ -1086,12 +1084,11 @@
                     Senior Business Development
                   </p>
                   <p class="mb-5 text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8]">
-                    Build partnerships, identify new opportunities, lead negotiations, and drive business growth across
-                    sectors.
+                    Membangun kemitraan, mengidentifikasi peluang baru, memimpin negosiasi, dan mendorong pertumbuhan bisnis di berbagai sektor.
                   </p>
                   <button type="button"
                     class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full mb-3 py-4 rounded-md hover:cursor-pointer hover:brightness-75">
-                    Learn More
+                    Pelajari Lebih Lanjut
                   </button>
                 </div>
               </div>
@@ -1108,8 +1105,8 @@
                     Full Stack Programmer
                   </p>
                   <p class="mb-5 text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8]">
-                    Develop full-stack apps using Laravel, React, Node.js, and mentor learners through video-based
-                    content.
+                    Kembangkan aplikasi full-stack menggunakan Laravel, React, Node.js, dan membimbing pelajar melalui
+                    konten berbasis video.
                   </p>
                   <!-- <ul class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4">
                     <li>Work From Office</li>
@@ -1117,7 +1114,7 @@
                   </ul> -->
                   <button type="button"
                     class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 mb-3 rounded-md hover:cursor-pointer hover:brightness-75">
-                    Learn More
+                    Pelajari Lebih Lanjut
                   </button>
                 </div>
               </div>
@@ -1133,7 +1130,7 @@
                     Quality Assurance
                   </p>
                   <p class="mb-5 text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8]">
-                    Create and run tests, track bugs, ensure performance and security, and collaborate with developers.
+                    Buat dan jalankan tes, lacak bug, pastikan kinerja dan keamanan, serta berkolaborasi dengan pengembang.
                   </p>
                   <!-- <ul class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4">
                     <li>Work From Office</li>
@@ -1141,7 +1138,7 @@
                   </ul> -->
                   <button type="button"
                     class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 mb-3 rounded-md place-self-end hover:cursor-pointer hover:brightness-75">
-                    Learn More
+                    Pelajari Lebih Lanjut
                   </button>
                 </div>
               </div>
@@ -1157,8 +1154,8 @@
                     Senior Business Development
                   </p>
                   <p class="mb-5 text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8]">
-                    Build partnerships, identify new opportunities, lead negotiations, and drive business growth across
-                    sectors.
+                    Membangun kemitraan, mengidentifikasi peluang baru, memimpin negosiasi, dan meningkatkan pertumbuhan bisnis
+                    di berbagai sektor.
                   </p>
                   <!-- <ul class="list-inside list-disc p-2 text-[14px] lg:text-[16px] font-[400] py-4">
                     <li>Work From Office</li>
@@ -1166,7 +1163,7 @@
                   </ul> -->
                   <button type="button"
                     class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full mb-3 py-4 rounded-md hover:cursor-pointer hover:brightness-75">
-                    Learn More
+                    Pelajari Lebih Lanjut
                   </button>
                 </div>
               </div>
@@ -1190,12 +1187,12 @@
                       Admin Sales
                     </p>
                     <p class="text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8] flex-grow">
-                      Handle course orders, respond to inquiries, manage CRM data, assist in reporting, invoicing, and
-                      support the sales team.
+                      Menghandle pesanan kursus, merespons pertanyaan, mengelola data CRM, membantu dalam pelaporan, penagihan, dan
+                      mendukung tim penjualan.
                     </p>
                     <button type="button"
                       class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 rounded-md hover:cursor-pointer hover:brightness-75">
-                      Learn More
+                      Pelajari Lebih Lanjut
                     </button>
                   </div>
                 </div>
@@ -1212,11 +1209,11 @@
                       Performance Marketing
                     </p>
                     <p class="text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8] flex-grow">
-                      Run and optimize paid ads, manage budgets, analyze performance, and collaborate on ad creatives.
+                      Jalankan dan optimalkan iklan berbayar, mengelola anggaran, menganalisis kinerja, dan berkolaborasi dalam kreatif iklan.
                     </p>
                     <button type="button"
                       class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 rounded-md hover:cursor-pointer hover:brightness-75">
-                      Learn More
+                      Pelajari Lebih Lanjut
                     </button>
                   </div>
                 </div>
@@ -1233,11 +1230,11 @@
                       Sales & Marketing Manager
                     </p>
                     <p class="text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8] flex-grow">
-                      Lead the sales team, develop strategies, manage clients, analyze markets, and oversee performance.
+                      Memimpin tim penjualan, mengembangkan strategi, mengelola klien, menganalisis pasar, dan mengawasi kinerja.
                     </p>
                     <button type="button"
                       class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 rounded-md hover:cursor-pointer hover:brightness-75">
-                      Learn More
+                      Pelajari Lebih Lanjut
                     </button>
                   </div>
                 </div>
@@ -1254,12 +1251,11 @@
                       Product Development
                     </p>
                     <p class="text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8] flex-grow">
-                      Design and improve educational products, collaborate with experts, and ensure effective,
-                      user-centered learning tools.
+                      Desain dan perbaiki produk edukasi, berkolaborasi dengan ahli, dan pastikan perangkat pembelajaran yang efektif dan berpusat pada pengguna.
                     </p>
                     <button type="button"
                       class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 rounded-md hover:cursor-pointer hover:brightness-75">
-                      Learn More
+                      Pelajari Lebih Lanjut
                     </button>
                   </div>
                 </div>
@@ -1276,12 +1272,11 @@
                       Full Stack Programmer
                     </p>
                     <p class="text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8] flex-grow">
-                      Develop full-stack apps using Laravel, React, Node.js, and mentor learners through video-based
-                      content.
+                      Membuat aplikasi full-stack menggunakan Laravel, React, Node.js, dan mentor siswa melalui konten video.
                     </p>
                     <button type="button"
                       class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 rounded-md hover:cursor-pointer hover:brightness-75">
-                      Learn More
+                      Pelajari Lebih Lanjut
                     </button>
                   </div>
                 </div>
@@ -1298,12 +1293,12 @@
                       Quality Assurance
                     </p>
                     <p class="text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8] flex-grow">
-                      Create and run tests, track bugs, ensure performance and security, and collaborate with
-                      developers.
+                      Membuat dan menjalankan tes, melacak bug, memastikan kinerja dan keamanan, serta berkolaborasi dengan
+                      pengembang.
                     </p>
                     <button type="button"
                       class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 rounded-md hover:cursor-pointer hover:brightness-75">
-                      Learn More
+                      Pelajari Lebih Lanjut
                     </button>
                   </div>
                 </div>
@@ -1320,12 +1315,11 @@
                       Senior Business Development
                     </p>
                     <p class="text-[14px] lg:text-[16px] font-[400] text-[#151517]/[0.8] flex-grow">
-                      Build partnerships, identify new opportunities, lead negotiations, and drive business growth
-                      across sectors.
+                      Membangun kemitraan, mengidentifikasi peluang baru, memimpin negosiasi, dan mendorong pertumbuhan bisnis di berbagai sektor.
                     </p>
                     <button type="button"
                       class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[700] w-full py-4 rounded-md hover:cursor-pointer hover:brightness-75">
-                      Learn More
+                      Pelajari Lebih Lanjut
                     </button>
                   </div>
                 </div>
@@ -1374,11 +1368,10 @@
     id="contact">
     <div class="w-auto h-full flex flex-col max-md:items-center gap-8 lg:pr-20 max-md:pb-10">
       <p class="max-md:text-center text-[32px] lg:text-[40px] font-[700]">
-        Ready to develop your potential?
+        Siap mengembangkan potensimu?
       </p>
       <p class="max-md:text-center text-[16px] lg:text-[20px] font-[400] text-[#151517]/[0.8] flex-grow">
-        Synergy is here to help you increase business efficiency and team
-        productivity!
+        Sinergi siap membantu Anda meningkatkan efisiensi bisnis dan produktivitas tim!
       </p>
       <button type="button"
         class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[600] w-fit px-7 py-5 rounded-md hover:cursor-pointer hover:brightness-75">
@@ -1393,7 +1386,7 @@
     <div class="max-w-[1200px] h-auto flex flex-col m-auto">
       <div class="w-auto h-auto flex flex-col justify-center items-center gap-8 lg:mx-52">
         <p class="text-[32px] lg:text-[40px] font-[700] text-center">
-          Photos & Video Gallery
+          Galeri Foto & Video
         </p>
         <p class="text-[16px] lg:text-[20px] font-[400] text-center text-[#151517]/[0.8]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -1480,24 +1473,24 @@
               <p class="text-[18px] font-[500]">Sinergi Life</p>
             </div>
             <p class="text-[16px] font-[400] opacity-70 max-md:text-center">
-              Sinergi Life is a holding and investment company that focuses
-              on developing and empowering digital businesses.
+              Sinergi Life adalah perusahaan induk dan investasi yang fokus
+              pada pengembangan dan pemberdayaan bisnis digital.
             </p>
           </div>
           <div class="flex mx-auto gap-8">
             <div class="w-auto h-auto flex flex-col gap-4">
-              <p class="text-[18px] font-[500] opacity-90">Company</p>
+              <p class="text-[18px] font-[500] opacity-90">Perusahaan</p>
               <a href="" class="text-[16px] opacity-70 hover:underline">
-                About
+                Tentang
               </a>
               <a href="" class="text-[16px] opacity-70 hover:underline">
-                Press
+                Pers
               </a>
               <a href="" class="text-[16px] opacity-70 hover:underline">
-                Careers
+                Karir
               </a>
               <a href="" class="text-[16px] opacity-70 hover:underline">
-                Contact
+                Kontak
               </a>
             </div>
             <div class="w-auto h-auto flex flex-col gap-4">
@@ -1519,19 +1512,19 @@
         </div>
         <div class="w-auto flex flex-col items-center">
           <p class="text-[16px] font-[400] self-start pb-5 opacity-70">
-            Stay Updated
+            Dapatkan Update Terbaru
           </p>
           <div class="w-full flex max-md:flex-col self-start gap-3">
-            <input type="text" placeholder="Enter your mail..."
+            <input type="text" placeholder="Masukkan email anda..."
               class="w-full h-[60px] bg-[#392060] border-2 border-[#6D28D9] rounded-lg px-5" />
             <button type="button"
               class="bg-[#6D28D9] w-full md:w-fit rounded-lg p-4 text-[14px] font-[600] self-center hover:cursor-pointer hover:brightness-90">
-              Subscribe
+              Berlangganan
             </button>
           </div>
           <p class="text-[16px] font-[400] pt-5 opacity-70 max-md:text-center">
-            You'll receive occasional emails from Eduwork, You always have
-            the choice to unsubscribe within every email.
+            Anda akan menerima email terbaru dari Eduwork, Anda selalu dapat
+            memilih untuk berhenti berlangganan dalam setiap email.
           </p>
         </div>
       </div>
@@ -1541,13 +1534,13 @@
             &#169;2025 Sinergi Life, All Rights Reserved
           </p>
           <p class="text-[16px] opacity-70">
-            Sinergi Life is a holding and investment company that focuses on
-            developing and empowering digital businesses.
+            Sinergi Life adalah perusahaan induk dan investasi yang fokus
+            pada pengembangan dan pemberdayaan bisnis digital.
           </p>
         </div>
         <div class="w-full h-full flex gap-8 justify-center md:justify-end items-center text-[16px] opacity-70">
-          <a href="" class="hover:underline"> Terms & Condition </a>
-          <a href="" class="hover:underline"> Privacy Policy </a>
+          <a href="" class="hover:underline"> Syarat & Kondisi </a>
+          <a href="" class="hover:underline"> Kebijakan Privasi </a>
         </div>
       </div>
     </div>
