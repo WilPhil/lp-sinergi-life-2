@@ -65,8 +65,8 @@
           </div>
           <div x-on:click="open =! open"
             class="max-lg:hidden flex justify-center items-center gap-3 hover:cursor-pointer">
-            <img src="images/Indonesia.png" alt="Indonesia Flag" class="" />
-            <p class="pt-1 text-[16px] font-400 opacity-70">ID</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/1280px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" alt="Indonesia Flag" class="w-[20px]" />
+            <p class="pt-1 text-[16px] font-400 opacity-70">ENG</p>
             <img src="images/polygon.png" alt="polygon" class="pt-0.5" :class="open ? 'rotate-180 pb-0.5' : ''" />
           </div>
         </div>
@@ -98,7 +98,7 @@
                 <div @click="mobileMenu = false"
                   class="flex flex-row gap-3 items-center justify-center bg-[#6D28D9] hover:bg-[#6D28D9]/[0.6] p-3 rounded-lg cursor-pointer">
                   <img src="images/Indonesia.png" alt="Indonesia" />
-                  <a href="id.html">Bahasa Indonesia</a>
+                  <a href="id.html" class="">Indonesian</a>
                 </div>
                 <div @click="mobileMenu = false"
                   class="flex flex-row gap-3 items-center justify-center bg-[#6D28D9] hover:bg-[#6D28D9]/[0.6] p-3 rounded-lg cursor-pointer">
@@ -115,12 +115,12 @@
           <div x-show="open"
             class="max-lg:hidden absolute right-5 xl:right-0 top-1 w-[186px] h-[86px] flex flex-col justify-center px-3 gap-2 rounded-lg bg-[#FFFFFF] text-[#212529] text-[14px] font-[400]">
             <img src="images/polygon.png" alt="polygon" class="absolute right-6 -inset-y-2 rotate-180" />
-            <div class="flex flex-row gap-3 items-center" x-on:click="changeLanguage('id')">
-              <img src="images/Indonesia.png" class="w-[20px]" alt="Indonesia" />
-              <a href="id.html">Bahasa Indonesia</a>
+            <div class="flex flex-row gap-3 items-center">
+              <img src="images/Indonesia.png" class="w-5" alt="Indonesia" />
+              <a href="id.html">Indonesian</a>
             </div>
-            <div class="flex flex-row gap-3 items-center" x-on:click="changeLanguage('en')">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/1280px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" class="w-[20px]" alt="Indonesia" />
+            <div class="flex flex-row gap-3 items-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/1280px-Flag_of_the_United_Kingdom_%283-5%29.svg.png" class="w-5" alt="Indonesia" />
               <a href="eng.html">English</a>
             </div>
           </div>
@@ -485,11 +485,11 @@
       <div class="w-auto h-auto flex flex-col justify-center items-center gap-10">
         <div class="flex flex-col justify-center items-start gap-5 max-xl:px-4">
           <p class="text-[32px] lg:text-[40px] font-[700] max-lg:text-left self-center">
-            Langkah Luar Biasa Englishvit
+            The Unstoppable Journey of Englishvit
           </p>
           <p class="text-[16px] lg:text-[20px] font-[400] max-lg:text-left self-center">
-            Berikut cerita singkat perjalanan luar biasa kami mengembangkan
-            perusahaan Englishvit
+            Here's a brief story of our extraordinary journey in developing
+            Englishvit company
           </p>
         </div>
         <div class="w-full h-auto max-xl:px-8 px-10">
@@ -915,12 +915,12 @@
         <div class="px-4 lg:px-0 flex flex-col gap-[30px]">
           <div class="flex flex-col justify-center items-center gap-[30px]">
             <p class="text-[32px] md:text-[40px] font-[700] text-center">
-              Upgrade Skill Mudah, Dapat Kerja Cepat!
+              Upgrade Your Skills Easily, Get Hired Quickly!
             </p>
             <p class="text-[16px] md:text-[20px] font-[400] text-center text-[#151517]/[0.8]">
-              Belajar dari para ahli industri dengan kurikulum yang didesain
-              untuk membangun keterampilan Anda. Dapatkan bimbingan,
-              pengalaman langsung, dan kesempatan kerja setelah lulus!
+              Learn from industry experts with a designed curriculum to build
+              your skills. Get guidance, hands-on experience, and job
+              opportunities after graduation!
             </p>
           </div>
 
@@ -1097,7 +1097,7 @@
               </div>
             </div>
             <div class="hidden xl:flex flex-row gap-5">
-              <div class="w-full h-full flex flex-col bg-[#FFFFFF] rounded-lg">
+              <div class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg">
                 <img class="object-cover w-full aspect-video rounded-t-lg" src="images/programmer.webp" alt="English" />
                 <div class="w-full h-full flex flex-col px-5 place-content-between">
                   <p
@@ -1122,7 +1122,7 @@
                 </div>
               </div>
 
-              <div class="w-full h-full flex flex-col bg-[#FFFFFF] rounded-lg">
+              <div class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg">
                 <img class="object-cover w-full aspect-video rounded-t-lg" src="images/qa.webp" alt="Graphic" />
                 <div class="w-full h-full flex flex-col px-5 place-content-between">
                   <p
@@ -1146,7 +1146,7 @@
                 </div>
               </div>
 
-              <div class="w-full h-full flex flex-col bg-[#FFFFFF] rounded-lg">
+              <div class="w-full h-full flex flex-col m-auto bg-[#FFFFFF] rounded-lg">
                 <img class="object-cover w-full aspect-video rounded-t-lg" src="images/senior_bisnis_dev.webp" alt="Admin" />
                 <div class="w-full h-full flex flex-col px-5 place-content-between">
                   <p
@@ -1382,7 +1382,7 @@
       </p>
       <button type="button"
         class="bg-[#6D28D9] text-[#FFFFFF] text-[14px] lg:text-[16px] font-[600] w-fit px-7 py-5 rounded-md hover:cursor-pointer hover:brightness-75">
-        <p class="opacity-95">Konsultasi Sekarang</p>
+        <p class="opacity-95">Consult Now</p>
       </button>
     </div>
     <img src="images/develop.png" alt="Develop" />
