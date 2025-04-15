@@ -29,7 +29,7 @@
 <body x-data="{ show_backToTop: false}" @scroll.window="show_backToTop = window.pageYOffset > 30">
 
   <!-- Button to top -->
-  <div x-bind:class="show_backToTop ? 'fixed' : 'hidden'" class="bottom-10 right-20 hover:cursor-pointer">
+  <div x-bind:class="show_backToTop ? 'lg:fixed' : 'hidden'" class="max-lg:hidden bottom-10 right-20 hover:cursor-pointer">
     <div @click="window.scrollTo({top: 0, behavior: 'smooth'})"
       class="size-18 bg-[#6D28D9] rounded-full flex justify-center items-center text-white">
       <img src="images/polygon.png" alt="polygon" class="rotate-180" />
@@ -1477,7 +1477,9 @@
               </svg>
             </button>
           </div>
-          <div class="w-full h-[450px] bg-[url(/images/gallery/picture-4-2.png)] bg-cover bg-center"></div>
+          <div class="w-full h-[450px]">
+            <img src="images/gallery/picture-4-2.png" alt="picture-4-2">
+          </div>
         </div>
         <div class="absolute w-full h-[100px] bottom-0 left-0 bg-gradient-to-b from-transparent to-[#F5F3FF]"></div>
       </div>
