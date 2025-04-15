@@ -33,7 +33,23 @@
     </style>
   </head>
 
-  <body x-data="autoTranslate">
+  <body
+    x-data="{ show_backToTop: false}"
+    @scroll.window="show_backToTop = window.pageYOffset > 30"
+  >
+    <!-- Button to top -->
+    <div
+      x-bind:class="show_backToTop ? 'fixed' : 'hidden'"
+      class="bottom-10 right-20 hover:cursor-pointer"
+    >
+      <div
+        @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="size-18 bg-[#6D28D9] rounded-full flex justify-center items-center text-white"
+      >
+        <img src="images/polygon.png" alt="polygon" class="rotate-180" />
+      </div>
+    </div>
+
     <div
       class="absolute inset-0 z-[-1] w-full h-screen xl:h-auto overflow-hidden"
     >
@@ -230,7 +246,7 @@
                   class="w-[20px]"
                   alt="Indonesia"
                 />
-                <a href="id.html">Bahasa Indonesia</a>
+                <a href="id.html" class="hover:font-bold">Bahasa Indonesia</a>
               </div>
               <div
                 class="flex flex-row gap-3 items-center"
@@ -239,9 +255,9 @@
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/1280px-Flag_of_the_United_Kingdom_%283-5%29.svg.png"
                   class="w-[20px]"
-                  alt="Indonesia"
+                  alt="English"
                 />
-                <a href="eng.html">English</a>
+                <a href="eng.html" class="hover:font-bold">English</a>
               </div>
             </div>
             <p
@@ -1987,19 +2003,29 @@
                 </svg>
               </button>
             </div>
-            <div class="w-full h-[250px] bg-[#FFFFFF]" src="" alt=""></div>
+            <div
+              class="w-full h-[250px] bg-[url(/images/gallery/picture-1-2.png)] bg-cover bg-center"
+            ></div>
           </div>
 
           <!-- Col 2 -->
           <div class="flex flex-col gap-4">
-            <div class="w-full h-[200px] bg-[#FFFFFF]" src="" alt=""></div>
-            <div class="w-full h-[400px] bg-[#FFFFFF]" src="" alt=""></div>
-            <div class="w-full h-[230px] bg-[#FFFFFF]" src="" alt=""></div>
+            <div
+              class="w-full h-[200px] bg-[url(/images/gallery/picture-2-1.png)] bg-cover bg-center"
+            ></div>
+            <div
+              class="w-full h-[400px] bg-[url(/images/gallery/picture-2-2.png)] bg-cover"
+            ></div>
+            <div
+              class="w-full h-[230px] bg-[url(/images/gallery/picture-2-3.jpeg)] bg-cover"
+            ></div>
           </div>
 
           <!-- Col 3 -->
           <div class="flex flex-col gap-4">
-            <div class="w-full h-[300px] bg-[#FFFFFF]" src="" alt=""></div>
+            <div
+              class="w-full h-[300px] bg-[url(/images/gallery/picture-3-1.png)] bg-cover"
+            ></div>
             <div
               class="w-full h-[450px] bg-[#FFFFFF] flex justify-center items-center"
               src=""
@@ -2066,7 +2092,9 @@
                 </svg>
               </button>
             </div>
-            <div class="w-full h-[450px] bg-[#FFFFFF]" src="" alt=""></div>
+            <div
+              class="w-full h-[450px] bg-[url(/images/gallery/picture-4-2.png)] bg-cover bg-center"
+            ></div>
           </div>
           <div
             class="absolute w-full h-[100px] bottom-0 left-0 bg-gradient-to-b from-transparent to-[#F5F3FF]"
