@@ -23,13 +23,29 @@
     html {
       scroll-behavior: smooth;
     }
+
+    .group {
+      will-change: transform;
+      animation: scrolling 30s linear infinite;
+    }
+
+    @keyframes scrolling {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(calc(-100% + 670px));
+      }
+    }
   </style>
 </head>
 
 <body x-data="{ show_backToTop: false}" @scroll.window="show_backToTop = window.pageYOffset > 30">
 
   <!-- Button to top -->
-  <div x-bind:class="show_backToTop ? 'lg:fixed' : 'hidden'" class="max-lg:hidden bottom-10 right-20 hover:cursor-pointer">
+  <div x-bind:class="show_backToTop ? 'lg:fixed' : 'hidden'"
+    class="max-lg:hidden bottom-10 right-20 hover:cursor-pointer">
     <div @click="window.scrollTo({top: 0, behavior: 'smooth'})"
       class="size-18 bg-[#6D28D9] rounded-full flex justify-center items-center text-white">
       <img src="images/polygon.png" alt="polygon" class="rotate-180" />
@@ -75,7 +91,7 @@
           </div>
           <div x-on:click="open =! open"
             class="max-lg:hidden flex justify-center items-center gap-3 hover:cursor-pointer">
-            <img src="images/Indonesia.png" alt="Indonesia Flag" class="" />
+            <img src="images/Indonesia.png" alt="Indonesia Flag" class="pt-1" />
             <p class="pt-1 text-[16px] font-400 opacity-70">ID</p>
             <img src="images/polygon.png" alt="polygon" class="pt-0.5" :class="open ? 'rotate-180 pb-0.5' : ''" />
           </div>
@@ -1423,78 +1439,119 @@
         <p class="text-[32px] lg:text-[40px] font-[700] text-center">
           Photos & Video Gallery
         </p>
-        <p class="text-[16px] lg:text-[20px] font-[400] text-center text-[#151517]/[0.8]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        <p class="text-[16px] lg:text-[20px] font-[400] text-center text-[#151517]/[0.8]">Jelajahi koleksi gambar dan
+          video kami yang menampilkan program pendidikan, acara, dan kisah sukses kami. Lihat sekilas tentang komunitas
+          pembelajaran kami yang dinamis dan dampak nyata dari pelatihan kami.</p>
         <button type="button"
           class="bg-[#6D28D9] px-[32px] py-[18px] rounded-md text-[#FFFFFF] text-[16px] lg:text-[18px] font-[600] hover:cursor-pointer hover:brightness-90">
           <p class="opacity-90">Lihat Semua</p>
         </button>
       </div>
-      <div
-        class="w-full h-[670px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 relative overflow-hidden my-10 text-[#FFFFFF]">
-        <!-- Col 1 -->
-        <div class="flex flex-col gap-4">
-          <div class="w-full h-[450px] bg-[#FFFFFF] flex justify-center items-center" src="" alt="">
-            <button type="button" class="bg-[#7C3AED] p-3 rounded-full hover:cursor-pointer hover:brightness-90">
-              <svg fill="#FFFFFF" class="size-3" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 210 210" xml:space="preserve">
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                  <path d="M179.07,105L30.93,210V0L179.07,105z"></path>
-                </g>
-              </svg>
-            </button>
+      <div class="w-full h-[670px] relative overflow-hidden my-10 text-[#FFFFFF]">
+        <!-- Blur top effect -->
+        <div class="absolute z-99 w-full h-[100px] top-0 left-0 bg-gradient-to-t from-transparent to-[#F5F3FF]"></div>
+
+        <!-- Mason Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-hidden group">
+          <!-- Col 1 -->
+          <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4">
+              <div class="relative overflow-hidden w-full h-[450px] bg-[#FFFFFF] flex justify-center items-center">
+                <iframe class="absolute inset-0 h-[533px]"
+                  src="https://www.youtube.com/embed/ui48HMn30uY?autoplay=1&mute=1&controls=0"></iframe>
+              </div>
+              <div class="w-full h-[250px] bg-[url(images/gallery/picture1.png)] bg-cover bg-center"></div>
+            </div>
+
+            <!-- Col 1 Loop -->
+            <div aria-hidden class="flex flex-col gap-4">
+              <div class="relative overflow-hidden w-full h-[450px] bg-[#FFFFFF] flex justify-center items-center">
+                <iframe class="absolute inset-0 h-[533px]"
+                  src="https://www.youtube.com/embed/ui48HMn30uY?autoplay=1&mute=1&controls=0"></iframe>
+              </div>
+              <div class="w-full h-[250px] bg-[url(images/gallery/picture1.png)] bg-cover bg-center"></div>
+            </div>
+            <div aria-hidden class="flex flex-col gap-4">
+              <div class="relative overflow-hidden w-full h-[450px] bg-[#FFFFFF] flex justify-center items-center">
+                <iframe class="absolute inset-0 h-[533px]"
+                  src="https://www.youtube.com/embed/ui48HMn30uY?autoplay=1&mute=1&controls=0"></iframe>
+              </div>
+              <div class="w-full h-[250px] bg-[url(images/gallery/picture1.png)] bg-cover bg-center"></div>
+            </div>
           </div>
-          <div class="w-full h-[250px] bg-[url(images/gallery/picture1.png)] bg-cover bg-center"></div>
+
+          <!-- Col 2 -->
+          <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4">
+              <div class="w-full h-[200px] bg-[url(images/gallery/picture2.png)] bg-cover bg-center"></div>
+              <div class="w-full h-[400px] bg-[url(images/gallery/picture3.png)] bg-cover"></div>
+              <div class="w-full h-[230px] bg-[url(images/gallery/picture4.jpeg)] bg-cover"></div>
+            </div>
+
+            <!-- Col 2 Loop -->
+            <div aria-hidden class="flex flex-col gap-4">
+              <div class="w-full h-[200px] bg-[url(images/gallery/picture2.png)] bg-cover bg-center"></div>
+              <div class="w-full h-[400px] bg-[url(images/gallery/picture3.png)] bg-cover"></div>
+              <div class="w-full h-[230px] bg-[url(images/gallery/picture4.jpeg)] bg-cover"></div>
+            </div>
+            <div aria-hidden class="flex flex-col gap-4">
+              <div class="w-full h-[200px] bg-[url(images/gallery/picture2.png)] bg-cover bg-center"></div>
+              <div class="w-full h-[400px] bg-[url(images/gallery/picture3.png)] bg-cover"></div>
+            </div>
+          </div>
+
+          <!-- Col 3 -->
+          <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4">
+              <div class="w-full h-[300px] bg-[url(images/gallery/picture5.png)] bg-cover"></div>
+              <div class="w-full h-[450px] bg-[url(images/gallery/pot2.webp)] bg-cover"></div>
+            </div>
+
+            <!-- Col 3 Loop -->
+            <div class="flex flex-col gap-4">
+              <div class="w-full h-[300px] bg-[url(images/gallery/picture5.png)] bg-cover"></div>
+              <div class="w-full h-[450px] bg-[url(images/gallery/pot2.webp)] bg-cover"></div>
+            </div>
+            <div class="flex flex-col gap-4">
+              <div class="w-full h-[300px] bg-[url(images/gallery/picture5.png)] bg-cover"></div>
+              <div class="w-full h-[450px] bg-[url(images/gallery/pot2.webp)] bg-cover"></div>
+            </div>
+          </div>
+
+          <!-- Col 4 -->
+          <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4">
+              <div class="relative overflow-hidden w-full h-[450px] bg-[#FFFFFF] flex justify-center items-center">
+                <iframe class="absolute inset-0 w-full h-[511px]"
+                  src="https://www.youtube.com/embed/n2RSRIGTKqk?autoplay=1&mute=1&controls=0"></iframe>
+              </div>
+              <div class="w-full h-[450px] bg-[url(images/gallery/picture6.png)] bg-cover bg-center"></div>
+            </div>
+
+            <!-- Col 4 loop -->
+            <div aria-hidden class="flex flex-col gap-4">
+              <div class="relative overflow-hidden w-full h-[450px] bg-[#FFFFFF] flex justify-center items-center">
+                <iframe class="absolute inset-0 w-full h-[511px]"
+                  src="https://www.youtube.com/embed/n2RSRIGTKqk?autoplay=1&mute=1&controls=0"></iframe>
+              </div>
+              <div class="w-full h-[450px] bg-[url(images/gallery/picture6.png)] bg-cover bg-center"></div>
+            </div>
+            <div aria-hidden class="flex flex-col gap-4">
+              <div class="relative overflow-hidden w-full h-[450px] bg-[#FFFFFF] flex justify-center items-center">
+                <iframe class="absolute inset-0 w-full h-[511px]"
+                  src="https://www.youtube.com/embed/n2RSRIGTKqk?autoplay=1&mute=1&controls=0"></iframe>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Col 2 -->
-        <div class="flex flex-col gap-4">
-          <div class="w-full h-[200px] bg-[url(images/gallery/picture2.png)] bg-cover bg-center"></div>
-          <div class="w-full h-[400px] bg-[url(images/gallery/picture3.png)] bg-cover"></div>
-          <div class="w-full h-[230px] bg-[url(images/gallery/picture4.jpeg)] bg-cover"></div>
+        <!-- Blur bottom effect -->
+        <div class="absolute z-99 w-full h-[100px] bottom-0 left-0 bg-gradient-to-b from-transparent to-[#F5F3FF]">
         </div>
-
-        <!-- Col 3 -->
-        <div class="flex flex-col gap-4">
-          <div class="w-full h-[300px] bg-[url(images/gallery/picture5.png)] bg-cover"></div>
-          <div class="w-full h-[450px] bg-[#FFFFFF] flex justify-center items-center" src="" alt="">
-            <button type="button" class="bg-[#7C3AED] p-3 rounded-full hover:cursor-pointer hover:brightness-90">
-              <svg fill="#FFFFFF" class="size-3" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 210 210" xml:space="preserve">
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                  <path d="M179.07,105L30.93,210V0L179.07,105z"></path>
-                </g>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Col 4 -->
-        <div class="flex flex-col gap-4">
-          <div class="w-full h-[450px] bg-[#FFFFFF] flex justify-center items-center" src="" alt="">
-            <button type="button" class="bg-[#7C3AED] p-3 rounded-full hover:cursor-pointer hover:brightness-90">
-              <svg fill="#FFFFFF" class="size-3" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 210 210" xml:space="preserve">
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                  <path d="M179.07,105L30.93,210V0L179.07,105z"></path>
-                </g>
-              </svg>
-            </button>
-          </div>
-          <div class="w-full h-[450px] bg-[url(images/gallery/picture6.png)] bg-cover bg-center"></div>
-        </div>
-        <div class="absolute w-full h-[100px] bottom-0 left-0 bg-gradient-to-b from-transparent to-[#F5F3FF]"></div>
       </div>
     </div>
   </div>
+
 
   <!-- Footer -->
   <div
