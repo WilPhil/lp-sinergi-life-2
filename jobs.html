@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Alpine CDN -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- Instrument Sans Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styling -->
+    <style>
+      body {
+        font-family: "Instrument Sans";
+      }
+    </style>
+
+    <title>Sinergi Life</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="w-full h-auto bg-[#ffffff] shadow-sm">
+      <div
+        class="relative max-w-[1200px] h-auto mx-auto flex flex-col place-content-start gap-10 xl:place-content-between"
+      >
+        <div
+          x-data="{ open: false }"
+          class="max-sm:relative w-full h-auto py-2 flex flex-row justify-between items-center"
+        >
+          <!-- Logo Company -->
+          <a href="" class="flex flex-row justify-center items-center gap-5">
+            <img src="images/Logo.png" alt="Logo" />
+            <p
+              class="text-[#151517] text-xl lg:text-[16px] font-[700] opacity-95"
+            >
+              Sinergi Life
+            </p>
+          </a>
+
+          <!-- Hamburger -->
+          <div
+            @click="mobileMenu = !mobileMenu"
+            class="lg:hidden flex justify-center items-center hover:cursor-pointer"
+          >
+            <img
+              x-show="!mobileMenu"
+              src="images/menu-symbol-of-three-parallel-lines-svgrepo-com.svg"
+              class="size-6"
+              alt="three bars"
+            />
+            <svg
+              x-show="mobileMenu"
+              xmlns="http://www.w3.org/2000/svg"
+              class="size-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </div>
+
+          <!-- Link -->
+          <div
+            class="max-lg:hidden flex justify-center items-center gap-8 text-[16px] font-[400] text-[#151517]"
+          >
+            <a href="index.html" class="hover:font-[600]">Home</a>
+            <a href="business.html" class="hover:font-[600]">For Business</a>
+            <a href="talent.html" class="hover:font-[600]">For Talent</a>
+            <a
+              href="#career"
+              class="text-[#6d28d9] font-[700] underline underline-offset-8 decoration-2 decoration-amber-500"
+              >Jobs</a
+            >
+            <a href="#contact" class="hover:font-[600]">FAQ</a>
+          </div>
+
+          <!-- Language Dropdown -->
+          <div
+            x-on:click="open =! open"
+            class="max-lg:hidden flex justify-center items-center gap-3 hover:cursor-pointer text-[#151517]"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/1280px-Flag_of_the_United_Kingdom_%283-5%29.svg.png"
+              alt="Indonesia Flag"
+              class="w-[20px] pt-1"
+            />
+            <p class="pt-1 text-[16px] font-400">ENG</p>
+            <img
+              src="Asset/Images/Polygon_black.png"
+              alt="polygon"
+              class="pt-1"
+              :class="open ? 'rotate-180 pb-1' : ''"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Expertise Jobs -->
+    <div class="max-w-[1200px] h-auto mx-auto py-20 max-lg:px-3">
+      <div
+        class="flex flex-col justify-center items-center gap-10 text-[#151517]"
+      >
+        <p class="text-[48px] font-[700] text-center">
+          Join Now, Choose Your Expertise
+        </p>
+        <p class="text-[18px] font-[400] text-center lg:px-52">
+          Bergabung dengan eksklusif network kami. Kembangkan Karir, Skill &
+          Network kamu bersama Upscale. Kami secara aktif akan mencarikan kamu
+          peluang yang lebih baik.
+        </p>
+
+        <div class="w-full h-auto grid grid-cols-3 gap-x-10 gap-y-8">
+          <div
+            class="bg-[#ffffff] w-full h-auto flex flex-col p-5 gap-4 rounded-3xl drop-shadow-lg"
+          >
+            <div class="flex flex-col gap-3">
+              <div class="flex justify-between items-center">
+                <p class="text-[18px] font-[600] text-[#151517]">
+                  Backend Engineer (GO)
+                </p>
+                <p
+                  class="bg-[#ede9fe] text-[14px] text-[#6d28d9] font-[400] px-2 py-1 rounded-full"
+                >
+                  Urgent
+                </p>
+              </div>
+              <div class="flex flex-col text-[#151517] gap-2">
+                <div class="flex items-center gap-5">
+                  <img
+                    src="Asset/Images/people.png"
+                    alt="People"
+                    class="size-[16px]"
+                  />
+                  <p class="text-[14px] font-[400]">Fulltime/Partime</p>
+                </div>
+                <div class="flex items-center gap-5">
+                  <img
+                    src="Asset/Images/location.png"
+                    alt="Location"
+                    class="size-[16px]"
+                  />
+                  <p class="text-[14px] font-[400]">Remote/Onsite</p>
+                </div>
+                <div class="flex items-center gap-5">
+                  <img
+                    src="Asset/Images/work.png"
+                    alt="Suitcase"
+                    class="size-[16px]"
+                  />
+                  <p class="text-[14px] font-[400]">
+                    Min. 1 year of experience
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full border-[1px] border-[#E8EAF0]"></div>
+            <div class="flex flex-col items-center">
+              <p class="text-[14px] font-[400] text-[#787E8D] self-start">
+                3 minggu yang lalu
+              </p>
+              <button
+                type="button"
+                class="cursor-pointer bg-[#6d28d9] text-[14px] font-[600] text-[#ffffff] p-2 rounded-md self-end"
+              >
+                Details
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-[#ffffff] w-full h-auto flex flex-col p-5 gap-4 rounded-3xl drop-shadow-lg"
+          >
+            <div class="flex flex-col gap-3">
+              <div class="flex justify-between items-center">
+                <p class="text-[18px] font-[600] text-[#151517]">
+                  Fullstack Programmer
+                </p>
+                <p
+                  class="bg-[#ede9fe] text-[14px] text-[#6d28d9] font-[400] px-2 py-1 rounded-full"
+                >
+                  Urgent
+                </p>
+              </div>
+              <div class="flex flex-col text-[#151517] gap-2">
+                <div class="flex items-center gap-5">
+                  <img
+                    src="Asset/Images/people.png"
+                    alt="People"
+                    class="size-[16px]"
+                  />
+                  <p class="text-[14px] font-[400]">Fulltime/Partime</p>
+                </div>
+                <div class="flex items-center gap-5">
+                  <img
+                    src="Asset/Images/location.png"
+                    alt="Location"
+                    class="size-[16px]"
+                  />
+                  <p class="text-[14px] font-[400]">Remote/Onsite</p>
+                </div>
+                <div class="flex items-center gap-5">
+                  <img
+                    src="Asset/Images/work.png"
+                    alt="Suitcase"
+                    class="size-[16px]"
+                  />
+                  <p class="text-[14px] font-[400]">
+                    Min. 2 years of experience
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full border-[1px] border-[#E8EAF0]"></div>
+            <div class="flex flex-col items-center">
+              <p class="text-[14px] font-[400] text-[#787E8D] self-start">
+                1 bulan yang lalu
+              </p>
+              <button
+                type="button"
+                class="cursor-pointer bg-[#6d28d9] text-[14px] font-[600] text-[#ffffff] p-2 rounded-md self-end"
+              >
+                Details
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-[#ffffff] w-full h-auto flex flex-col p-5 gap-4 rounded-3xl drop-shadow-lg"
+          >
+            <div class="flex flex-col gap-3">
+              <div class="flex justify-between items-center">
+                <p class="text-[18px] font-[600] text-[#151517]">
+                  IT Product Manager
+                </p>
+                <p
+                  class="bg-[#ede9fe] text-[14px] text-[#6d28d9] font-[400] px-2 py-1 rounded-full"
+                >
+                  Urgent
+                </p>
+              </div>
+              <div class="flex flex-col text-[#151517] gap-2">
+                <div class="flex items-center gap-5">
+                  <img
+                    src="Asset/Images/people.png"
+                    alt="People"
+                    class="size-[16px]"
+                  />
+                  <p class="text-[14px] font-[400]">Fulltime/Partime</p>
+                </div>
+                <div class="flex items-center gap-5">
+                  <img
+                    src="Asset/Images/location.png"
+                    alt="Location"
+                    class="size-[16px]"
+                  />
+                  <p class="text-[14px] font-[400]">Remote/Onsite</p>
+                </div>
+                <div class="flex items-center gap-5">
+                  <img
+                    src="Asset/Images/work.png"
+                    alt="Suitcase"
+                    class="size-[16px]"
+                  />
+                  <p class="text-[14px] font-[400]">
+                    Min. 2 years of experience
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full border-[1px] border-[#E8EAF0]"></div>
+            <div class="flex flex-col items-center">
+              <p class="text-[14px] font-[400] text-[#787E8D] self-start">
+                1 bulan yang lalu
+              </p>
+              <button
+                type="button"
+                class="cursor-pointer bg-[#6d28d9] text-[14px] font-[600] text-[#ffffff] p-2 rounded-md self-end"
+              >
+                Details
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-[#ffffff] w-full h-auto flex flex-col p-5 gap-4 rounded-3xl drop-shadow-lg"
+          >
+            <div class="flex flex-col gap-3">
+              <div class="flex justify-between items-center">
+                <p class="text-[18px] font-[600] text-[#151517]">QA Engineer</p>
+                <p
+                  class="bg-[#ede9fe] text-[14px] text-[#6d28d9] font-[400] px-2 py-1 rounded-full"
+                >
+                  Urgent
+                </p>
+              </div>
+              <div class="flex flex-col text-[#151517] gap-2">
+                <div class="flex items-center gap-5">
+                  <img
+                    src="Asset/Images/people.png"
+                    alt="People"
+                    class="size-[16px]"
+                  />
+                  <p class="text-[14px] font-[400]">Fulltime/Partime</p>
+                </div>
+                <div class="flex items-center gap-5">
+                  <img
+                    src="Asset/Images/location.png"
+                    alt="Location"
+                    class="size-[16px]"
+                  />
+                  <p class="text-[14px] font-[400]">Remote/Onsite</p>
+                </div>
+                <div class="flex items-center gap-5">
+                  <img
+                    src="Asset/Images/work.png"
+                    alt="Suitcase"
+                    class="size-[16px]"
+                  />
+                  <p class="text-[14px] font-[400]">
+                    Min. 2 years of experience
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full border-[1px] border-[#E8EAF0]"></div>
+            <div class="flex flex-col items-center">
+              <p class="text-[14px] font-[400] text-[#787E8D] self-start">
+                1 bulan yang lalu
+              </p>
+              <button
+                type="button"
+                class="cursor-pointer bg-[#6d28d9] text-[14px] font-[600] text-[#ffffff] p-2 rounded-md self-end"
+              >
+                Details
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-[#ffffff] w-full h-auto flex flex-col p-5 gap-4 rounded-3xl drop-shadow-lg"
+          >
+            <div class="flex flex-col gap-3">
+              <div class="flex justify-between items-center">
+                <p class="text-[18px] font-[600] text-[#151517]">
+                  UI/UX Designer
+                </p>
+                <p
+                  class="bg-[#ede9fe] text-[14px] text-[#6d28d9] font-[400] px-2 py-1 rounded-full"
+                >
+                  Urgent
+                </p>
+              </div>
+              <div class="flex flex-col text-[#151517] gap-2">
+                <div class="flex items-center gap-5">
+                  <img
+                    src="Asset/Images/people.png"
+                    alt="People"
+                    class="size-[16px]"
+                  />
+                  <p class="text-[14px] font-[400]">Fulltime/Partime</p>
+                </div>
+                <div class="flex items-center gap-5">
+                  <img
+                    src="Asset/Images/location.png"
+                    alt="Location"
+                    class="size-[16px]"
+                  />
+                  <p class="text-[14px] font-[400]">Remote/Onsite</p>
+                </div>
+                <div class="flex items-center gap-5">
+                  <img
+                    src="Asset/Images/work.png"
+                    alt="Suitcase"
+                    class="size-[16px]"
+                  />
+                  <p class="text-[14px] font-[400]">
+                    Min. 2 years of experience
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full border-[1px] border-[#E8EAF0]"></div>
+            <div class="flex flex-col items-center">
+              <p class="text-[14px] font-[400] text-[#787E8D] self-start">
+                1 bulan yang lalu
+              </p>
+              <button
+                type="button"
+                class="cursor-pointer bg-[#6d28d9] text-[14px] font-[600] text-[#ffffff] p-2 rounded-md self-end"
+              >
+                Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div
+      class="bg-radial from-[#3e1683] from-10% to-[#2E1065] to-100% w-auto h-auto text-[#FFFFFF] pt-20 pb-10 max-xl:px-4"
+    >
+      <div class="max-w-[1200px] h-auto flex flex-col m-auto">
+        <div class="flex max-md:flex-col border-b-[1px] pb-10 gap-8">
+          <div class="flex max-md:flex-col justify-center gap-10 pb-10">
+            <div class="w-auto h-auto flex flex-col items-center gap-5">
+              <div
+                class="flex flex-row justify-start md:self-start items-center opacity-90 gap-2"
+              >
+                <img src="images/Logo.png" alt="Logo" class="size-10" />
+                <p class="text-[18px] font-[500]">Sinergi Life</p>
+              </div>
+              <p class="text-[16px] font-[400] opacity-70 max-md:text-center">
+                Sinergi Life is a holding and investment company that focuses on
+                developing and empowering digital businesses.
+              </p>
+            </div>
+            <div class="flex mx-auto gap-8">
+              <div class="w-auto h-auto flex flex-col gap-4">
+                <p class="text-[18px] font-[500] opacity-90">Company</p>
+                <a href="" class="text-[16px] opacity-70 hover:underline">
+                  About
+                </a>
+                <a href="" class="text-[16px] opacity-70 hover:underline">
+                  Press
+                </a>
+                <a href="" class="text-[16px] opacity-70 hover:underline">
+                  Careers
+                </a>
+                <a href="" class="text-[16px] opacity-70 hover:underline">
+                  Contact
+                </a>
+              </div>
+              <div class="w-auto h-auto flex flex-col gap-4">
+                <p class="text-[18px] font-[500] opacity-90">Connect</p>
+                <a href="" class="text-[16px] opacity-70 hover:underline">
+                  Instagram
+                </a>
+                <a href="" class="text-[16px] opacity-70 hover:underline">
+                  Linkedin
+                </a>
+                <a href="" class="text-[16px] opacity-70 hover:underline">
+                  Twitter
+                </a>
+                <a href="" class="text-[16px] opacity-70 hover:underline">
+                  Facebook
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="w-auto flex flex-col items-center">
+            <p class="text-[16px] font-[400] self-start pb-5 opacity-70">
+              Stay Updated
+            </p>
+            <div class="w-full flex max-md:flex-col self-start gap-3">
+              <input
+                type="text"
+                placeholder="Enter your mail..."
+                class="w-full h-[60px] bg-[#392060] border-2 border-[#6D28D9] rounded-lg px-5"
+              />
+              <button
+                type="button"
+                class="bg-[#6D28D9] w-full md:w-fit rounded-lg p-4 text-[14px] font-[600] self-center hover:cursor-pointer hover:brightness-90"
+              >
+                Subscribe
+              </button>
+            </div>
+            <p
+              class="text-[16px] font-[400] pt-5 opacity-70 max-md:text-center"
+            >
+              You'll receive occasional emails from Eduwork, You always have the
+              choice to unsubscribe within every email.
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-auto flex max-md:flex-col pt-10 place-content-between items-center"
+        >
+          <div class="w-full h-full flex flex-col pb-10">
+            <p class="text-[18px] pb-2 opacity-90">
+              &#169;2025 Sinergi Life, All Rights Reserved
+            </p>
+            <p class="text-[16px] opacity-70">
+              Sinergi Life is a holding and investment company that focuses on
+              developing and empowering digital businesses.
+            </p>
+          </div>
+          <div
+            class="w-full h-full flex gap-8 justify-center md:justify-end items-center text-[16px] opacity-70"
+          >
+            <a href="" class="hover:underline"> Terms & Condition </a>
+            <a href="" class="hover:underline"> Privacy Policy </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
