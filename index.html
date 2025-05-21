@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -41,16 +40,16 @@
   </style>
 </head>
 
-<body x-data="{ show_backToTop: false}" @scroll.window="show_backToTop = window.pageYOffset > 30">
+<body x-data="{ show_backToTop: false }" @scroll.window="show_backToTop = window.pageYOffset > 30">
 
   <!-- Button to top -->
-  <div x-bind:class="show_backToTop ? 'lg:fixed' : 'hidden'"
+  <!-- <div x-bind:class="show_backToTop ? 'lg:fixed' : 'hidden'"
     class="max-lg:hidden bottom-10 right-20 hover:cursor-pointer">
     <div @click="window.scrollTo({top: 0, behavior: 'smooth'})"
       class="size-18 bg-[#6D28D9] rounded-full flex justify-center items-center text-white">
       <img src="images/polygon.png" alt="polygon" class="rotate-180" />
     </div>
-  </div>
+  </div> -->
 
   <div class="absolute inset-0 z-[-1] w-full h-screen xl:h-auto overflow-hidden">
     <video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted>
@@ -59,6 +58,7 @@
     </video>
   </div>
 
+  <!-- Header -->
   <div class="w-full h-auto flex flex-col overflow-x-hidden">
     <!-- Nav Bar & Title -->
     <div class="w-full min-h-screen h-auto flex justify-center text-white brightness-110 lg:pb-10 z-30">
@@ -83,10 +83,10 @@
           </div>
           <div class="max-lg:hidden flex justify-center items-center gap-8 text-[16px]">
             <a href="" class="font-[700] underline underline-offset-8 decoration-2 decoration-amber-500">Home</a>
-            <a href="#work" class="hover:font-[600] hover:opacity-100 opacity-70">Work</a>
-            <a href="#about" class="hover:font-[600] hover:opacity-100 opacity-70">About</a>
-            <a href="#career" class="hover:font-[600] hover:opacity-100 opacity-70">Career</a>
-            <a href="#contact" class="hover:font-[600] hover:opacity-100 opacity-70">Contact</a>
+            <a href="business.html" class="hover:font-[600] hover:opacity-100 opacity-70">For Business</a>
+            <a href="talent.html" class="hover:font-[600] hover:opacity-100 opacity-70">For Talent</a>
+            <a href="jobs.html" class="hover:font-[600] hover:opacity-100 opacity-70">Jobs</a>
+            <a href="#contact" class="hover:font-[600] hover:opacity-100 opacity-70">FAQ</a>
           </div>
           <div x-on:click="open =! open"
             class="max-lg:hidden flex justify-center items-center gap-3 hover:cursor-pointer">
@@ -1396,8 +1396,6 @@
         </script>
       </div>
     </div>
-
-
   </div>
 
   <!-- Ready to develop -->
